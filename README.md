@@ -70,6 +70,3 @@ Only use one smooth scroll library at a time and ensure correct version.
 
 👨‍💻 Author
 Made by Parth for Tech Taste Foods.
-
-**Tip:**  
-Update the author, license, and asset paths as needed for your deployment.
