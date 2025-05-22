@@ -20,7 +20,7 @@ const FaqSection = styled.div`
 
 const PageTitle = styled.h1`
   position: absolute;
-  top: 5%;
+  top: 10%;
   display: flex;
   span {
     font-family: "Korto-bold", sans-serif;
@@ -39,7 +39,7 @@ const FaqContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 20vh;
+  margin-top: 25vh;
 `;
 
 const FaqItem = styled.div.attrs(({ isActive, ...rest }) => rest)`
@@ -212,7 +212,7 @@ export const Faqs = () => {
         y: 0,
         opacity: 1,
         stagger: {
-          amount: 1,
+          amount: 0.8,
           from: "start",
         },
         ease: "power3.out",

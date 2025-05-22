@@ -1,192 +1,216 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import Matter from "matter-js";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import Client1 from "../assets/icons/client1.svg";
+import Client2 from "../assets/icons/client2.svg";
+import Client3 from "../assets/icons/client3.svg";
+import Client4 from "../assets/icons/client4.svg";
+import Client5 from "../assets/icons/clinet5.svg";
+import Client6 from "../assets/icons/client6.svg";
+import Client7 from "../assets/icons/client7.svg";
+import Client8 from "../assets/icons/client8.svg";
+import Client9 from "../assets/icons/client9.svg";
+import Client10 from "../assets/icons/client10.svg";
+import Client11 from "../assets/icons/client11.svg";
+import Client12 from "../assets/icons/client12.svg";
+import Client13 from "../assets/icons/client13.svg";
+import Client14 from "../assets/icons/client14.svg";
 
-const Container = styled.div`
-  position: relative;
+gsap.registerPlugin(ScrollTrigger);
+
+const ClientsSection = styled.div`
+  min-height: 50vh;
   width: 100%;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
   overflow: hidden;
-  background: #fff;
-  
-  canvas {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    width: 250px;
     height: 100%;
-    z-index: 50;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, #f5f5f5 0%, transparent 100%);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, #f5f5f5 0%, transparent 100%);
   }
 `;
 
-const CenterCircle = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-  background: #ffd700;
-  border-radius: 50%;
+const ClientsContainer = styled.div`
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  z-index: 10;
-  pointer-events: none;
+  gap: 2rem;
+  padding: 0 2rem;
+  will-change: transform;
+  animation: marquee 20s linear infinite;
+  transition: all 0.5s ease;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% / 3));
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
 `;
 
-const CTAButton = styled.button`
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  pointer-events: auto;
+const ClientLogo = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), 0 1.5px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 
   &:hover {
     transform: scale(1.05);
-    background: #333;
+    z-index: 3;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22), 0 3px 8px rgba(0, 0, 0, 0.13);
   }
 `;
 
 export const Clients = () => {
+  const clients = [
+    { logo: Client1 },
+    { logo: Client2 },
+    { logo: Client3 },
+    { logo: Client4 },
+    { logo: Client5 },
+    { logo: Client6 },
+    { logo: Client7 },
+    { logo: Client8 },
+    { logo: Client9 },
+    { logo: Client10 },
+    { logo: Client11 },
+    { logo: Client12 },
+    { logo: Client13 },
+    { logo: Client14 },
+  ];
+
   const containerRef = useRef(null);
-  const engineRef = useRef(null);
-  const renderRef = useRef(null);
+  const clientsSectionRef = useRef(null);
 
   useEffect(() => {
-    const Engine = Matter.Engine;
-    const Render = Matter.Render;
-    const World = Matter.World;
-    const Bodies = Matter.Bodies;
-
-    // Create engine
-    engineRef.current = Engine.create({
-      gravity: { x: 0, y: 1, scale: 0.001 },
-    });
-
-    // Create renderer
-    renderRef.current = Render.create({
-      element: containerRef.current,
-      engine: engineRef.current,
-      options: {
-        width: window.innerWidth,
-        height: window.innerHeight,
-        wireframes: false, // Ensure objects are rendered with fill styles
-        background: "transparent",
-        pixelRatio: window.devicePixelRatio || 1,
-      },
-    });
-
-    // Create walls
-    const walls = [
-      Bodies.rectangle(
-        window.innerWidth / 2,
-        window.innerHeight + 30,
-        window.innerWidth,
-        60,
-        {
-          isStatic: true,
-          render: { fillStyle: "transparent" },
-        }
-      ),
-      Bodies.rectangle(-30, window.innerHeight / 2, 60, window.innerHeight, {
-        isStatic: true,
-        render: { fillStyle: "transparent" },
-      }),
-      Bodies.rectangle(
-        window.innerWidth + 30,
-        window.innerHeight / 2,
-        60,
-        window.innerHeight,
-        {
-          isStatic: true,
-          render: { fillStyle: "transparent" },
-        }
-      ),
-    ];
-
-    // Add walls to world
-    World.add(engineRef.current.world, walls);
-
-    // Create falling circles function
-    const createCircle = () => {
-      if (!engineRef.current) return;
-
-      const size = Math.random() * 60 + 20;
-      const circle = Bodies.circle(
-        Math.random() * (window.innerWidth - 100) + 50,
-        -50,
-        size / 2,
-        {
-          render: {
-            fillStyle: "#ff0000", // Ensure the circle has a visible color
-          },
-          restitution: 0.6,
-          friction: 0.1,
-          density: 0.001,
-        }
-      );
-      World.add(engineRef.current.world, circle);
-
-      // Log circle creation for debugging
-      console.log("Circle created:", circle);
-
-      // Remove circles that are out of view
-      setTimeout(() => {
-        if (engineRef.current && circle) {
-          World.remove(engineRef.current.world, circle);
-          console.log("Circle removed:", circle);
-        }
-      }, 10000);
-    };
-
-    // Start engine and renderer
-    Engine.run(engineRef.current);
-    Render.run(renderRef.current);
-
-    // Create circles periodically
-    const interval = setInterval(createCircle, 1000);
-
-    // Handle window resize
-    const handleResize = () => {
-      if (!renderRef.current || !renderRef.current.canvas) return;
-
-      renderRef.current.canvas.width = window.innerWidth;
-      renderRef.current.canvas.height = window.innerHeight;
-      Matter.Render.setPixelRatio(renderRef.current, window.devicePixelRatio);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      clearInterval(interval);
-
-      if (engineRef.current) {
-        World.clear(engineRef.current.world);
-        Engine.clear(engineRef.current);
-      }
-
-      if (renderRef.current) {
-        Render.stop(renderRef.current);
-        renderRef.current.canvas.remove();
-        renderRef.current.canvas = null;
-        renderRef.current.context = null;
-        renderRef.current.textures = {};
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const speedFactor = 10.3;
+      const container = containerRef.current;
+      if (container) {
+        const offsetTop =
+          container.getBoundingClientRect().top + window.scrollY;
+        const distance = scrollY - offsetTop;
+        container.style.transform = `translateY(${distance * speedFactor}px)`;
       }
     };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // useGSAP(() => {
+  //   gsap
+  //     .timeline({
+  //       scrollTrigger: {
+  //         trigger: statsSectionRef.current,
+  //         pin: true,
+  //         // markers: true,
+  //         pinSpacing: false,
+  //         start: "top top",
+  //         end: "bottom top",
+  //         scrub: 1,
+  //       },
+  //     })
+  //     .to(statsSectionRef.current, {
+  //       opacity: 0,
+  //       duration: 1,
+  //     });
+
+  //   // Fixed number ticker animation
+  //   valueRefs.current.forEach((valueRef, index) => {
+  //     const value = stats[index % stats.length].value;
+  //     const numericValue = parseInt(value.replace(/[^0-9]/g, ""));
+
+  //     gsap.fromTo(
+  //       valueRef,
+  //       { innerText: 0 },
+  //       {
+  //         scrollTrigger: {
+  //           trigger: valueRef,
+  //           start: "top 80%",
+  //           end: "top 50%",
+  //           once: true,
+  //         },
+  //         innerText: numericValue,
+  //         duration: 2,
+  //         snap: { innerText: 1 },
+  //         ease: "power1.inOut",
+  //         modifiers: {
+  //           innerText: (value) => {
+  //             const num = Math.min(Math.round(Number(value)), numericValue);
+  //             const originalValue = stats[index % stats.length].value;
+  //             if (originalValue === "0") return "0";
+  //             if (originalValue.includes("Cr")) return `₹${num}Cr+`;
+  //             if (originalValue.includes("%")) return `${num}%`;
+  //             return `${num}+`;
+  //           },
+  //         },
+  //       }
+  //     );
+  //   });
+
+  //   // 🔁 Add resize listener for ScrollTrigger refresh
+  //   const handleResize = () => ScrollTrigger.refresh();
+  //   window.addEventListener("resize", handleResize);
+
+  //   // 🧹 Cleanup
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
+
   return (
-    <Container ref={containerRef}>
-      <CenterCircle>
-        <CTAButton>Request Visit</CTAButton>
-      </CenterCircle>
-    </Container>
+    <ClientsSection ref={clientsSectionRef}>
+      <ClientsContainer ref={containerRef}>
+        {[...clients, ...clients, ...clients].map((client, index) => (
+          <ClientLogo key={index}>
+            <img src={client.logo} alt={client.name} />
+          </ClientLogo>
+        ))}
+      </ClientsContainer>
+    </ClientsSection>
   );
 };

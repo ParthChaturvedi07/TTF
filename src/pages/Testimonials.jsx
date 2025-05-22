@@ -23,7 +23,7 @@ const TestimonialSection = styled.div`
 
 const PageTitle = styled.h1`
   position: absolute;
-  top: 7%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, 0);
   display: flex;
@@ -45,7 +45,7 @@ const CardContainer = styled.div`
   gap: 3vw;
   height: 50vh;
   width: max-content;
-  margin-top: 25vh;
+  margin-top: 27vh;
 `;
 
 const Card = styled.div`

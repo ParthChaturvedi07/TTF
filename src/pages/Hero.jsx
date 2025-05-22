@@ -131,6 +131,7 @@ const Heading = styled.h1`
     color: #fcb731;
     display: flex;
     gap: 2.2vh;
+    font-weight: 900;
   }
 `;
 

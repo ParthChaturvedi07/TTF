@@ -41,21 +41,6 @@ const StatsSection = styled.div`
   }
 `;
 
-const PageTitle = styled.h1`
-  position: absolute;
-  top: 5%;
-  display: flex;
-  span {
-    font-family: "Korto-bold", sans-serif;
-    font-weight: 700;
-    font-size: 7rem;
-    display: inline-block;
-    transform-origin: center;
-    margin: 0 2rem;
-    transform: scale(2);
-  }
-`;
-
 const StatsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -208,27 +193,6 @@ export const Stats = () => {
         duration: 1,
       });
 
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: statsSectionRef.current,
-        scroller: "body",
-        start: "top: 70%",
-        end: "top 30%",
-        // markers: true,
-        scrub: 1.2,
-      },
-    });
-
-    const spans = pageTitleRef.current.querySelectorAll("span");
-
-    tl2.to(spans, {
-      scale: 1,
-      margin: "0rem",
-      duration: 3,
-      stagger: 0.5,
-      ease: "expo.out",
-    });
-
     // Fixed number ticker animation
     valueRefs.current.forEach((valueRef, index) => {
       const value = stats[index % stats.length].value;
@@ -275,13 +239,6 @@ export const Stats = () => {
 
   return (
     <StatsSection ref={statsSectionRef}>
-      <PageTitle ref={pageTitleRef}>
-        <span>S</span>
-        <span>t</span>
-        <span>a</span>
-        <span>t</span>
-        <span>s</span>
-      </PageTitle>
       <StatsContainer ref={containerRef}>
         {[...stats, ...stats, ...stats].map((stat, index) => (
           <StatBall key={index}>
