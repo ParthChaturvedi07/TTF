@@ -1,142 +1,75 @@
-# React + Vite
+# Tech Taste Foods – React Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, animated, and responsive frontend for Tech Taste Foods, built with **React**, **Vite**, **styled-components**, **GSAP**, and **Locomotive Scroll** (or Lenis for smooth scrolling). This project showcases restaurant/food business services, testimonials, stats, FAQs, and more, with rich UI/UX and smooth scroll-based animations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **React + Vite**: Fast development and HMR.
+- **Styled Components**: Modular, themeable CSS-in-JS.
+- **GSAP Animations**: Scroll-triggered, staggered, and pinning animations.
+- **Smooth Scrolling**: Using Locomotive Scroll or Lenis for buttery-smooth scroll and scroll-based triggers.
+- **Responsive Design**: Works on desktop and mobile.
+- **Custom Fonts**: Korto and Gilroy font families.
+- **Sections**:
+  - Hero landing with animated text and video
+  - Services with dynamic cards
+  - Animated Stats with number tickers
+  - Testimonials with horizontal scroll and pinning
+  - Clients, Gallery, FAQs, and Contact
+- **SVG and Image Assets**: For icons, backgrounds, and illustrations.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
 
+## 📦 Folder Structure
 
-// matter.js:
-// useEffect(() => {
-  //   const { Engine, Render, World, Bodies, Events, Body } = Matter;
+GitHub Copilot
+src/ assets/ # Images, videos, SVGs, fonts components/ # Navbar, Footer, ServiceCard, etc. pages/ # Hero, Services, Stats, Testimonials, Faqs, Gallery, Contact, Clients, Process styles/ # GlobalStyles.js, BlobBackground.js, etc. App.jsx # Main app entry main.jsx # Vite entry point ...
 
-  //   const engine = Engine.create({
-  //     gravity: { y: 0.6 },
-  //   });
-  //   const world = engine.world;
+---
 
-  //   const render = Render.create({
-  //     canvas: canvasRef.current,
-  //     engine: engine,
-  //     options: {
-  //       width: window.innerWidth,
-  //       height: window.innerHeight,
-  //       wireframes: false,
-  //       background: "transparent",
-  //       pixelRatio: window.devicePixelRatio,
-  //     },
-  //   });
+## 🛠️ Getting Started
 
-  //   const ground = Bodies.rectangle(
-  //     window.innerWidth / 2,
-  //     window.innerHeight + 30,
-  //     window.innerWidth,
-  //     60,
-  //     {
-  //       isStatic: true,
-  //       render: { visible: false },
-  //     }
-  //   );
+### 1. Install dependencies
 
-  //   const leftWall = Bodies.rectangle(
-  //     -30,
-  //     window.innerHeight / 2,
-  //     60,
-  //     window.innerHeight,
-  //     {
-  //       isStatic: true,
-  //       render: { visible: false },
-  //     }
-  //   );
+```sh
+npm install
 
-  //   const rightWall = Bodies.rectangle(
-  //     window.innerWidth + 30,
-  //     window.innerHeight / 2,
-  //     60,
-  //     window.innerHeight,
-  //     {
-  //       isStatic: true,
-  //       render: { visible: false },
-  //     }
-  //   );
+2. Start the development server
+npm run dev
+3. Build for production
+npm run dev
+```
 
-  //   World.add(world, [ground, leftWall, rightWall]);
+⚙️ Key Dependencies
+React – UI library
+Vite – Fast dev/build tool
+styled-components – CSS-in-JS
+GSAP – Animations and ScrollTrigger
+Locomotive Scroll or Lenis – Smooth scrolling
+@gsap/react – GSAP React integration
 
-  //   const textures = [burgerImg, pizzaImg, samosaImg];
-  //   const activeBodies = [];
+📝 Customization
+Fonts: Place your .ttf files in public/fonts/ and reference them in GlobalStyles.js.
+Assets: Place images/videos in src/assets/.
+Backgrounds: Set background images in GlobalStyles.js or per-section styled components.
+ScrollTrigger: Always use scroller: scrollRef.current when using Locomotive Scroll.
 
-  //   const createFallingItem = () => {
-  //     const size = 65;
-  //     const texture = textures[Math.floor(Math.random() * textures.length)];
-  //     const startX = Math.random() * (window.innerWidth - 200) + 100;
+🧩 Adding Sections
+Each section is a React component in src/pages/.
+To add or reorder, edit the <App /> component in App.jsx.
 
-  //     const body = Bodies.circle(startX, -60, size / 2, {
-  //       restitution: 0.3,
-  //       friction: 0.1,
-  //       density: 0.001,
-  //       render: {
-  //         sprite: {
-  //           texture,
-  //           xScale: size / 100,
-  //           yScale: size / 100,
-  //         },
-  //       },
-  //     });
+🐞 Troubleshooting
+Pinning/ScrollTrigger not working?
+Make sure you pass scrollRef to all components using GSAP ScrollTrigger and set scroller: scrollRef.current.
+Fonts not loading?
+Check your font paths in GlobalStyles.js.
+Locomotive/Lenis conflicts?
+Only use one smooth scroll library at a time and ensure correct version.
 
-  //     body.hasSwitched = false;
-  //     activeBodies.push(body);
-  //     Body.setVelocity(body, { x: Math.random() - 0.5, y: 2 });
+👨‍💻 Author
+Made by Parth for Tech Taste Foods.
 
-  //     World.add(world, body);
-
-  //     // Remove bodies that are out of view
-  //     if (activeBodies.length > 20) {
-  //       const oldBody = activeBodies.shift();
-  //       World.remove(world, oldBody);
-  //     }
-  //   };
-
-  //   let interval = setInterval(createFallingItem, 1000);
-
-  //   Events.on(engine, "afterUpdate", () => {
-  //     const switchHeight = window.innerHeight * 0.4;
-  //     activeBodies.forEach((body) => {
-  //       if (!body.hasSwitched && body.position.y > switchHeight) {
-  //         body.render.sprite.texture = noteImg;
-  //         body.hasSwitched = true;
-  //       }
-  //     });
-  //   });
-
-  //   Engine.run(engine);
-  //   Render.run(render);
-
-  //   const handleResize = () => {
-  //     render.canvas.width = window.innerWidth;
-  //     render.canvas.height = window.innerHeight;
-  //     Matter.Body.setPosition(ground, {
-  //       x: window.innerWidth / 2,
-  //       y: window.innerHeight + 30,
-  //     });
-  //     Matter.Body.setPosition(rightWall, {
-  //       x: window.innerWidth + 30,
-  //       y: window.innerHeight / 2,
-  //     });
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => {
-  //     clearInterval(interval);
-  //     Render.stop(render);
-  //     World.clear(world, false);
-  //     Engine.clear(engine);
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
+**Tip:**  
+Update the author, license, and asset paths as needed for your deployment.
