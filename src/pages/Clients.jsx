@@ -79,6 +79,7 @@ const ClientsContainer = styled.div`
 `;
 
 const ClientLogo = styled.div`
+  background: #FFFBEA;
   width: 200px;
   height: 200px;
   border-radius: 50%;
