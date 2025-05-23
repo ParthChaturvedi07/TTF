@@ -14,6 +14,10 @@ const NavbarContainer = styled.nav`
   transform: translateY(${(props) => (props.show ? "0" : "-100%")});
   transition: transform 0.3s ease;
   opacity: 0;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const NavContent = styled.div`

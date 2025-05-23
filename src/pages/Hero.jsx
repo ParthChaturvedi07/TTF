@@ -26,7 +26,6 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 10rem;
 
   .hero-video {
     position: absolute;
@@ -50,8 +49,12 @@ const Wrapper = styled.section`
     gap: 2rem;
     position: relative;
     z-index: 3;
-  }
+    margin-bottom: 8vh;
 
+    @media (max-width: 480px) {
+      margin-bottom: -5vh;
+    }
+  }
   .image-trail {
     position: absolute;
     border-radius: 10px;
@@ -110,6 +113,12 @@ const HeadingTop = styled.div`
       transform: translate(0, 0) rotate(0deg);
     }
   }
+
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const Heading = styled.h1`
@@ -121,7 +130,7 @@ const Heading = styled.h1`
 
   div {
     font-family: "Korto-bold", sans-serif;
-    font-size: 4.3rem;
+    font-size: 4.55rem;
     line-height: 1.05;
     font-weight: 700;
     position: relative;
@@ -132,6 +141,17 @@ const Heading = styled.h1`
     display: flex;
     gap: 2.2vh;
     font-weight: 900;
+  }
+
+  @media (max-width: 480px) {
+    div {
+      font-size: 2.5rem;
+      line-height: 1.1;
+    }
+    span {
+      font-size: 1.5rem;
+      gap: 1vh;
+    }
   }
 `;
 
@@ -144,6 +164,13 @@ const Subheading = styled.p`
   max-width: 53vw;
   text-align: center;
   margin-top: 1.2rem;
+
+  @media (max-width: 480px) {
+    div {
+      font-size: 0.9rem;
+    }
+    max-width: 90vw;
+  }
 `;
 
 const CTAButton = styled.button`
@@ -471,16 +498,6 @@ export const Hero = () => {
 
   return (
     <Wrapper id="home" ref={WrapperRef}>
-      {/* <AnimationContainer>
-        <canvas
-          ref={canvasRef}
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-        />
-      </AnimationContainer> */}
-
       <div className="hero-content">
         <HeadingTop ref={HeadingTopRef}>
           <h3>Helping Restaurants Grow since 2014</h3>
