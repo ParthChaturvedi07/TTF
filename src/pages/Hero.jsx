@@ -538,7 +538,7 @@ export const Hero = () => {
             opacity: 1,
             width: "100%",
             height: "50vh",
-            top: "25%",
+            top: "20%",
             left: "50%",
             duration: 0.4,
           },
@@ -547,7 +547,7 @@ export const Hero = () => {
         .to(
           WhoAreWeRef.current,
           {
-            top: "50%",
+            top: "40%",
             duration: 0.6,
             opacity: 1,
             ease: "power2.inOut",

@@ -31,15 +31,15 @@ const Heading = styled.h1`
     font-family: "Korto-bold", san-serif;
     color: #000;
   }
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
 
   @media (max-width: 480px) {
     margin-left: 0;
     div {
-      font-size: 1.5rem;
+      font-size: 1.9rem;
       text-align: center;
     }
-    margin-top: -5rem;
+    margin-top: -15rem;
   }
 `;
 
@@ -64,11 +64,11 @@ const Paragraph = styled.p`
     max-width: 100%;
 
     div {
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.4;
     }
 
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 `;
 
@@ -88,7 +88,8 @@ const Callout = styled.div`
   @media (max-width: 480px) {
     text-align: center;
     margin-left: 0vw;
-    transform: scale(0.9);
+    min-width: 0;
+    padding: 0.7rem;
   }
 `;
 
@@ -98,6 +99,7 @@ const CalloutText = styled.div`
   font-family: "Gilroy-semibold", san-serif;
 
   @media (max-width: 480px) {
+    display: none;
   }
 `;
 
