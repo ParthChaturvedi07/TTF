@@ -11,21 +11,14 @@ gsap.registerPlugin(ScrollTrigger);
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  position: relative;
+  // position: relative;
   // background-color: #fff4c9;
   box-shadow: 0 -8px 24px -8px rgba(0, 0, 0, 0.15);
-`;
-
-const Section = styled.section`
-  padding: 5rem;
-  height: 100vh;
-  max-width: 100%;
-  margin: 0 auto;
-  position: relative;
   display: flex;
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  padding: 3rem;
 
   @media (max-width: 768px) {
     padding: 2rem;
@@ -35,8 +28,8 @@ const Section = styled.section`
 const ServicesContainer = styled.div`
   height: 100%;
   width: 100%;
-  gap: 2rem;
   position: relative;
+  // background-color: blue;
 `;
 
 const PageTitle = styled.h1`
@@ -44,12 +37,6 @@ const PageTitle = styled.h1`
   top: 5%;
   left: 4%;
   display: flex;
-
-  @media (max-width: 1200px) {
-    position: relative;
-    top: 5%;
-    left: 7%;
-  }
 
   span {
     font-family: "Korto-bold", sans-serif;
@@ -61,51 +48,65 @@ const PageTitle = styled.h1`
     font-size: 7rem;
     transform: scale(2);
   }
-`;
 
-const ServicesContent = styled.div`
-  width: 60%;
-  position: absolute;
-  left: 4%;
-  bottom: 50%;
-
-  @media (max-width: 1200px) {
-    width: 60%;
+  @media (max-width: 1200px) and (min-width: 993px) {
     position: absolute;
+    top: 7%;
     left: 4%;
-    bottom: 50%;
+    span {
+      font-size: 5.7rem;
+    }
+  }
+
+  /* For screens between 992px and 900px */
+  @media (max-width: 992px) and (min-width: 901px) {
+    top: 9%;
+    left: 4%;
+    span {
+      font-size: 5rem;
+    }
+  }
+
+  /* For screens between 900px and 768px */
+  @media (max-width: 900px) and (min-width: 768px) {
+    top: 10%;
+    left: 4%;
+    span {
+      font-size: 4.5rem;
+    }
   }
 `;
 
-// const ServiceMoto = styled.h1`
-//   font-size: clamp(2.5rem, 4vw, 4.5rem);
-//   font-family: "Korto-bold", sans-serif;
-//   font-weight: 700;
-//   line-height: 1.2;
-//   max-width: 70%;
+const ServicesContent = styled.div`
+  position: absolute;
+  width: 60%;
+  left: 4%;
+  top: 47%;
 
-//   @media (max-width: 1200px) {
-//     max-width: 100%;
-//     text-align: center;
-//   }
-// `;
-
-// const CardWrapper = styled.div`
-//   position: absolute;
-//   right: -6%;
-//   top: 15%;
-//   width: 50%;
-//   height: 100vh;
-//   perspective: 1000px;
-
-//   @media (max-width: 1200px) {
-//     position: relative;
-//     right: 0;
-//     width: 90%;
-//     margin: 0 auto;
-//     height: 60vh;
-//   }
-// `;
+  // @media (max-width: 1200px) {
+  //   width: 80%;
+  //   left: 7%;
+  //   top: 45%;
+  // }
+  // @media (max-width: 900px) {
+  //   width: 90%;
+  //   left: 5%;
+  //   top: 43%;
+  // }
+  // @media (max-width: 768px) {
+  //   width: 100%;
+  //   left: 0;
+  //   top: 40%;
+  //   position: relative;
+  // }
+  // @media (max-width: 600px) {
+  //   width: 100%;
+  //   left: 0;
+  //   top: 30%;
+  //   position: relative;
+  //   padding: 0 1rem;
+  // }
+`;
 
 const ServiceButton = styled.button`
   background: transparent;
@@ -120,38 +121,45 @@ const ServiceButton = styled.button`
 `;
 
 const ServiceMoto = styled.h1`
-  font-size: 4.5rem;
+  font-size: 9.5vh;
   font-family: "Korto-bold", sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  max-width: 65%;
+  max-width: 70%;
   white-space: pre-line;
 
   @media (max-width: 1200px) {
-    font-size: 3.3rem;
-    max-width: 65%;
+    font-size: 8vh;
+    max-width: 72%;
+  }
+  @media (max-width: 900px) {
+    font-size: 7vh;
+    max-width: 75%;
+  }
+  @media (max-width: 600px) {
+    font-size: 5vh;
+    max-width: 79%;
   }
 `;
 
 const CardWrapper = styled.div`
   position: absolute;
-  right: -6%;
-  top: 15%;
+  right: 0;
+  bottom: 3%;
   width: 50%;
-  height: 100vh;
-  perspective: 1000px;
-
-  @media (max-width: 1200px) {
-    right: -3%;
-    margin: 0 auto;
-    height: 60vh;
-  }
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const CardsContainer = styled.div`
-  position: relative;
+  position: absolute;
+  // top: 18%;
+  // right: -26%;
   height: 100%;
-  transform-style: preserve-3d;
+  width: 100%;
+  // background-color: pink;
 `;
 
 const serviceContentData = [
@@ -410,42 +418,43 @@ export const Services = () => {
     <>
       <Container ref={ContainerRef}>
         {/* <BlobBackground /> */}
-        <Section>
-          <ServicesContainer>
-            <PageTitle ref={pageTitleRef}>
-              <span>S</span>
-              <span>e</span>
-              <span>r</span>
-              <span>v</span>
-              <span>i</span>
-              <span>c</span>
-              <span>e</span>
-              <span>s</span>
-            </PageTitle>
-            <ServicesContent ref={ServiceContentRef}>
-              {serviceContentData.map((content, index) => (
-                <div
-                  style={{
-                    position: "absolute",
-                    // top: "50%",
-                    // left: "5%",
-                    // //   transform: "translate(0,-50%)",
-                  }}
-                  key={index}
-                >
-                  <ServiceButton>{content.button}</ServiceButton>
-                  <ServiceMoto>{content.moto}</ServiceMoto>
-                </div>
-              ))}
-            </ServicesContent>
 
-            <CardWrapper>
-              <CardsContainer>
-                <DynamicCardList ref={CardRef} />
-              </CardsContainer>
-            </CardWrapper>
-          </ServicesContainer>
-        </Section>
+        <ServicesContainer>
+          <PageTitle ref={pageTitleRef}>
+            <span>S</span>
+            <span>e</span>
+            <span>r</span>
+            <span>v</span>
+            <span>i</span>
+            <span>c</span>
+            <span>e</span>
+            <span>s</span>
+          </PageTitle>
+
+          <ServicesContent ref={ServiceContentRef}>
+            {serviceContentData.map((content, index) => (
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  transition: "opacity 0.5s ease",
+                }}
+                key={index}
+              >
+                <ServiceButton>{content.button}</ServiceButton>
+                <ServiceMoto>{content.moto}</ServiceMoto>
+              </div>
+            ))}
+          </ServicesContent>
+
+          <CardWrapper>
+            <CardsContainer>
+              <DynamicCardList ref={CardRef} />
+            </CardsContainer>
+          </CardWrapper>
+        </ServicesContainer>
       </Container>
     </>
   );

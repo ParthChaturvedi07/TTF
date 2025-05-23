@@ -70,7 +70,46 @@ const cardsData = [
   },
 ];
 
-const CardContainer = styled.div``;
+const CardContainer = styled.div`
+  position: absolute;
+  left: 24%;
+  top: 10%;
+
+  /* For screens between 1200px and 1100px */
+  @media (max-width: 1200px) and (min-width: 1101px) {
+    left: 18%;
+  }
+
+  /* For screens between 1100px and 1024px */
+  @media (max-width: 1100px) and (min-width: 1025px) {
+    left: 14%;
+  }
+
+  /* For screens between 1024px and 992px */
+  @media (max-width: 1024px) and (min-width: 993px) {
+    left: 12%;
+  }
+
+  /* For screens between 992px and 900px */
+  @media (max-width: 992px) and (min-width: 901px) {
+    left: 10%;
+  }
+
+  /* For screens between 900px and 850px */
+  @media (max-width: 900px) and (min-width: 851px) {
+    left: 7%;
+  }
+
+  /* For screens between 850px and 800px */
+  @media (max-width: 850px) and (min-width: 801px) {
+    left: 5%;
+  }
+
+  /* For screens between 800px and 768px */
+  @media (max-width: 800px) and (min-width: 768px) {
+    left: 0;
+  }
+`;
 
 const Card = styled.div`
   position: absolute;
@@ -80,9 +119,29 @@ const Card = styled.div`
   border-radius: 24px;
   height: 68vh;
   width: 68vh;
+
+  /* For screens between 1200px and 992px */
+  @media (max-width: 1200px) and (min-width: 993px) {
+    height: 65vh;
+    width: 65vh;
+  }
+
+  /* For screens between 992px and 900px */
+  @media (max-width: 992px) and (min-width: 901px) {
+    height: 63vh;
+    width: 63vh;
+  }
+
+  /* For screens between 900px and 768px */
+  @media (max-width: 900px) and (min-width: 768px) {
+    height: 58vh;
+    width: 58vh;
+  }
 `;
 
 const Content = styled.div`
+  position: absolute;
+  width: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -256,7 +315,7 @@ const ServiceCard = ({ cardData }) => {
 const DynamicCardList = React.forwardRef((props, ref) => {
   return (
     <CardContainer>
-      <div ref={ref}>
+      <div style={{ position: "absolute", top: "10%", right: "0" }} ref={ref}>
         {cardsData.map((card) => (
           <ServiceCard key={card.id} cardData={card} />
         ))}

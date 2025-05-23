@@ -179,7 +179,7 @@ const CTAButton = styled.button`
   }
 
   &:hover {
-    color: #fcb731;
+    color: #000;
     scale: 1.1;
     box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
   }
