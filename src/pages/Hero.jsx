@@ -245,6 +245,10 @@ const WhoAreWeContainer = styled.section`
   width: 100%;
   height: 100%;
   z-index: 2;
+
+  @media (max-width: 480px) {
+    top: 100%;
+  }
 `;
 
 export const Hero = () => {
@@ -390,102 +394,201 @@ export const Hero = () => {
         "reveal"
       );
 
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: WrapperRef.current,
-        scroller: "body",
-        start: "top top",
-        end: "bottom top",
-        // markers: true,
-        pin: true,
-        scrub: 1,
-      },
-    });
+    let mm = gsap.matchMedia();
 
-    let split = SplitText.create(".text", {
-      type: "words",
-      smartWrap: true,
-    });
+    mm.add("(min-width: 481px)", () => {
+      // Desktop animation
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: WrapperRef.current,
+          scroller: "body",
+          start: "top top",
+          end: "bottom top",
+          pin: true,
+          scrub: 1,
+        },
+      });
 
-    tl2
-      .fromTo(
-        [
-          HeadingTopRef.current,
-          HeadingRef.current,
-          WrapperRef.current.querySelector("p"),
-          WrapperRef.current.querySelector("button"),
-        ],
-        { opacity: 1 },
-        { opacity: 0, duration: 0.3 },
-        "start"
-      )
+      let split = SplitText.create(".text", {
+        type: "words",
+        smartWrap: true,
+      });
 
-      .to(
-        HeroVideo.current,
-        {
-          opacity: 1,
-          // left: "25%",
-          width: "100%",
-          height: "100%",
-          duration: 0.4,
-        },
-        "start+=0.1"
-      )
-      .to(
-        HeroVideo.current,
-        {
-          left: "17%",
-          width: "35%",
-          duration: 0.6,
-          ease: "power2.inOut",
-        },
-        "abc"
-      )
-      .to(
-        WhoAreWeRef.current,
-        {
-          right: 0,
-          duration: 0.6,
-          // delay: 1,
-          opacity: 1,
-          ease: "power2.inOut",
-        },
-        "abc"
-      )
-      .from(
-        split.words,
-        {
-          x: "100%", // Slide in from the left
-          opacity: 0, // Fade in
-          duration: 0.6,
-          ease: "power2.out",
-          stagger: {
-            amount: 0.5,
-            from: "left",
+      tl2
+        .fromTo(
+          [
+            HeadingTopRef.current,
+            HeadingRef.current,
+            WrapperRef.current.querySelector("p"),
+            WrapperRef.current.querySelector("button"),
+          ],
+          { opacity: 1 },
+          { opacity: 0, duration: 0.3 },
+          "start"
+        )
+        .to(
+          HeroVideo.current,
+          {
+            opacity: 1,
+            width: "100%",
+            height: "100%",
+            duration: 0.4,
           },
+          "start+=0.1"
+        )
+        .to(
+          HeroVideo.current,
+          {
+            left: "17%",
+            width: "35%",
+            duration: 0.6,
+            ease: "power2.inOut",
+          },
+          "abc"
+        )
+        .to(
+          WhoAreWeRef.current,
+          {
+            right: 0,
+            duration: 0.6,
+            opacity: 1,
+            ease: "power2.inOut",
+          },
+          "abc"
+        )
+        .from(
+          split.words,
+          {
+            x: "100%",
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            stagger: {
+              amount: 0.5,
+              from: "left",
+            },
+          },
+          "abc+=0.2"
+        )
+        .from(
+          WhoParaRef.current,
+          {
+            x: "100%",
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "abc+=0.3"
+        )
+        .from(
+          WhoCalloutRef.current,
+          {
+            x: "500%",
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "start+=0.6"
+        );
+    });
+
+    mm.add("(max-width: 480px)", () => {
+      // Mobile animation
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: WrapperRef.current,
+          scroller: "body",
+          start: "top top",
+          end: "bottom top",
+          pin: true,
+          scrub: 1,
         },
-        "abc+=0.2"
-      )
-      .from(
-        WhoParaRef.current,
-        {
-          x: "100%",
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.out",
-        },
-        "abc+=0.3"
-      )
-      .from(
-        WhoCalloutRef.current,
-        {
-          x: "500%",
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.out",
-        },
-        "start+=0.6"
-      );
+      });
+
+      let split = SplitText.create(".text", {
+        type: "words",
+        smartWrap: true,
+      });
+
+      tl2
+        .fromTo(
+          [
+            HeadingTopRef.current,
+            HeadingRef.current,
+            WrapperRef.current.querySelector("p"),
+            WrapperRef.current.querySelector("button"),
+          ],
+          { opacity: 1 },
+          { opacity: 0, duration: 0.3 },
+          "start"
+        )
+        .to(
+          HeroVideo.current,
+          {
+            opacity: 1,
+            width: "100%",
+            height: "100%",
+            duration: 0.4,
+          },
+          "start+=0.1"
+        )
+        .to(
+          HeroVideo.current,
+          {
+            opacity: 1,
+            width: "100%",
+            height: "50vh",
+            top: "25%",
+            left: "50%",
+            duration: 0.4,
+          },
+          "abc"
+        )
+        .to(
+          WhoAreWeRef.current,
+          {
+            top: "50%",
+            duration: 0.6,
+            opacity: 1,
+            ease: "power2.inOut",
+          },
+          "abc"
+        )
+        .from(
+          split.words,
+          {
+            y: "100%",
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            stagger: {
+              amount: 0.5,
+              from: "start",
+            },
+          },
+          "abc+=0.2"
+        )
+        .from(
+          WhoParaRef.current,
+          {
+            y: "100%",
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "abc+=0.3"
+        )
+        .from(
+          WhoCalloutRef.current,
+          {
+            y: "100%",
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "start+=0.6"
+        );
+    });
 
     // Trigger tl only on initial load and if scroll is near top
     const handleLoad = () => {
@@ -509,6 +612,7 @@ export const Hero = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
+      mm.revert();
       window.removeEventListener("resize", handleResize);
       const triggers = ScrollTrigger.getAll().filter(
         (t) => t.trigger === WrapperRef.current

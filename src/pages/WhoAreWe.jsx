@@ -3,11 +3,6 @@ import styled from "styled-components";
 
 const WhoAreWeContainer = styled.section`
   position: absolute;
-  background: url("../assets//icons//Tunnel.svg");
-  // background-position: center;
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
   right: 0;
   width: 65.5%;
   height: 100vh;
@@ -21,6 +16,12 @@ const WhoAreWeContainer = styled.section`
   text-align: left;
 
   box-shadow: 0 -8px -24px 8px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+  }
 `;
 
 const Heading = styled.h1`
@@ -31,6 +32,15 @@ const Heading = styled.h1`
     color: #000;
   }
   margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+    div {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    margin-top: -5rem;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -48,6 +58,18 @@ const Paragraph = styled.p`
     }
   }
   margin-bottom: 5rem;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+    max-width: 100%;
+
+    div {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    margin-bottom: 1rem;
+  }
 `;
 
 const Callout = styled.div`
@@ -62,12 +84,21 @@ const Callout = styled.div`
   min-width: 38.25rem;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   margin-left: -8.5vw;
+
+  @media (max-width: 480px) {
+    text-align: center;
+    margin-left: 0vw;
+    transform: scale(0.9);
+  }
 `;
 
 const CalloutText = styled.div`
   max-width: 12.7vw;
   text-align: left;
   font-family: "Gilroy-semibold", san-serif;
+
+  @media (max-width: 480px) {
+  }
 `;
 
 const CalloutButton = styled.button`
