@@ -393,7 +393,7 @@ export const Testimonials = () => {
   ];
 
   return (
-    <TestimonialSection
+    <TestimonialSection id="testimonials"
       style={{
         padding: "4vh",
       }}

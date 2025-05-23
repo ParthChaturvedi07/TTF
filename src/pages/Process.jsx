@@ -83,7 +83,8 @@ const CardContent = styled.div`
   background: #fffbea;
   padding: 2rem;
   border-radius: 24px;
-  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1), 0px 0px 8px 0px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 8px 0px rgba(0, 0, 0, 0.19);
   margin-top: 2rem;
   height: calc(100% - 120px);
 `;
@@ -331,7 +332,7 @@ export const Process = () => {
   }, [cards]);
 
   return (
-    <ProcessSection ref={processSectionRef}>
+    <ProcessSection id="process" ref={processSectionRef}>
       <PageTitle ref={pageTitleRef}>
         <span>P</span>
         <span>r</span>

@@ -212,12 +212,7 @@ export const Hero = () => {
   const WhoCalloutRef = useRef(null);
 
   useGSAP(() => {
-    const images = [
-      sampleImage,
-      sampleImage2,
-      sampleImage3,
-      sampleImage4,
-    ];
+    const images = [sampleImage, sampleImage2, sampleImage3, sampleImage4];
 
     let currentImageIndex = 0;
     let lastX = 0;
@@ -475,7 +470,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <Wrapper ref={WrapperRef}>
+    <Wrapper id="home" ref={WrapperRef}>
       {/* <AnimationContainer>
         <canvas
           ref={canvasRef}

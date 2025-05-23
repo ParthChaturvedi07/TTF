@@ -311,7 +311,7 @@ export const Contact = () => {
 
   return (
     <>
-      <ContactSection ref={contactSectionRef}>
+      <ContactSection id="contact" ref={contactSectionRef}>
         <PageTitle ref={pageTitleRef}>
           <span>G</span>
           <span>e</span>

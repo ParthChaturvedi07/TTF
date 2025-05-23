@@ -117,7 +117,7 @@ const CalloutButton = styled.button`
 
 export const WhoAreWe = ({ headingRef, calloutRef, paraRef }, ref) => {
   return (
-    <WhoAreWeContainer ref={ref}>
+    <WhoAreWeContainer id="about" ref={ref}>
       <Heading className="text" ref={headingRef}>
         Helping restaurants
         <br />

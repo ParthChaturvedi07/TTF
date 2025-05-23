@@ -232,7 +232,7 @@ export const Faqs = () => {
 
   return (
     <>
-      <FaqSection ref={faqSectionRef}>
+      <FaqSection id="faq" ref={faqSectionRef}>
         <PageTitle ref={pageTitleRef}>
           <span>F</span>
           <span>A</span>

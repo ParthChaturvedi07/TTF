@@ -139,7 +139,7 @@ export const Navbar = () => {
       setPrevScrollPos(currentScrollPos);
 
       // Determine active section based on scroll position
-      const sections = ["home", "about", "clients", "services", "contact"];
+      const sections = ["home", "services", "testimonials", "faq", "contact"];
       sections.forEach((section) => {
         const element = document.getElementById(section);
         if (element) {
@@ -178,26 +178,26 @@ export const Navbar = () => {
             Home
           </NavItem>
           <NavItem
-            className={`nav-item ${activeSection === "about" ? "active" : ""}`}
-            onClick={() => scrollToSection("about")}
-          >
-            About us
-          </NavItem>
-          <NavItem
-            className={`nav-item ${
-              activeSection === "clients" ? "active" : ""
-            }`}
-            onClick={() => scrollToSection("clients")}
-          >
-            Clients
-          </NavItem>
-          <NavItem
             className={`nav-item ${
               activeSection === "services" ? "active" : ""
             }`}
             onClick={() => scrollToSection("services")}
           >
             Services
+          </NavItem>
+          <NavItem
+            className={`nav-item ${
+              activeSection === "testimonials" ? "active" : ""
+            }`}
+            onClick={() => scrollToSection("testimonials")}
+          >
+            Testimonials
+          </NavItem>
+          <NavItem
+            className={`nav-item ${activeSection === "faq" ? "active" : ""}`}
+            onClick={() => scrollToSection("faq")}
+          >
+            Faq
           </NavItem>
           <NavItem
             className={`nav-item ${

@@ -55,6 +55,7 @@ const ClientsSection = styled.div`
 `;
 
 const ClientsContainer = styled.div`
+  margin-top: -15vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -79,7 +80,7 @@ const ClientsContainer = styled.div`
 `;
 
 const ClientLogo = styled.div`
-  background: #FFFBEA;
+  background: #fffbea;
   width: 200px;
   height: 200px;
   border-radius: 50%;
