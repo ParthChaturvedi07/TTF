@@ -49,7 +49,7 @@ const Wrapper = styled.section`
     gap: 2rem;
     position: relative;
     z-index: 3;
-    margin-bottom: 8vh;
+    margin-top: 8vh;
 
     @media (max-width: 480px) {
       margin-bottom: -5vh;
@@ -118,6 +118,14 @@ const HeadingTop = styled.div`
     h3 {
       font-size: 1rem;
     }
+    margin-bottom: 2vh;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    h3 {
+      font-size: 1.1rem;
+    }
+    margin-bottom: -2vh;
   }
 `;
 
@@ -153,6 +161,12 @@ const Heading = styled.h1`
       gap: 1vh;
     }
   }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    div {
+      font-size: 3rem;
+    }
+  }
 `;
 
 const Subheading = styled.p`
@@ -167,9 +181,17 @@ const Subheading = styled.p`
 
   @media (max-width: 480px) {
     div {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     max-width: 90vw;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    div {
+      font-size: 1.2rem;
+    }
+    margin-top: 0.5rem;
+    max-width: 80vw;
   }
 `;
 
