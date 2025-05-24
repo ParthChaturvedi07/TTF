@@ -396,7 +396,7 @@ export const Hero = () => {
 
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 481px)", () => {
+    mm.add("(min-width: 601px)", () => {
       // Desktop animation
       const tl2 = gsap.timeline({
         scrollTrigger: {
@@ -492,7 +492,7 @@ export const Hero = () => {
         );
     });
 
-    mm.add("(max-width: 480px)", () => {
+    mm.add("(max-width: 600px)", () => {
       // Mobile animation
       const tl2 = gsap.timeline({
         scrollTrigger: {

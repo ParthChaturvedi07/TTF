@@ -17,7 +17,7 @@ const WhoAreWeContainer = styled.section`
 
   box-shadow: 0 -8px -24px 8px rgba(0, 0, 0, 0.15);
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     width: 100%;
     height: 100vh;
     padding: 2rem;
@@ -33,7 +33,7 @@ const Heading = styled.h1`
   }
   margin-bottom: 1.1rem;
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     margin-left: 0;
     div {
       font-size: 1.9rem;
@@ -59,7 +59,7 @@ const Paragraph = styled.p`
   }
   margin-bottom: 5rem;
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     margin-left: 0;
     max-width: 100%;
 
@@ -85,11 +85,29 @@ const Callout = styled.div`
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   margin-left: -8.5vw;
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     text-align: center;
     margin-left: 0vw;
     min-width: 0;
     padding: 0.7rem;
+  }
+
+  @media (max-width: 1200px) and (min-width: 993px) {
+    margin-left: -15.5vw;
+  }
+
+  /* For screens between 992px and 900px */
+  @media (max-width: 992px) and (min-width: 901px) {
+    margin-left: -20.5vw;
+  }
+
+  /* For screens between 900px and 768px */
+  @media (max-width: 900px) and (min-width: 768px) {
+    margin-left: -25.5vw;
+  }
+
+  @media (mix-width: 601px) and (max-width: 768px) {
+    margin-left: -30.5vw;
   }
 `;
 
@@ -98,8 +116,20 @@ const CalloutText = styled.div`
   text-align: left;
   font-family: "Gilroy-semibold", san-serif;
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     display: none;
+  }
+
+  @media (max-width: 1200px) and (min-width: 993px) {
+    max-width: 15.7vw;
+  }
+
+  @media (max-width: 992px) and (min-width: 901px) {
+    max-width: 18.7vw;
+  }
+
+  @media (max-width: 900px) and (min-width: 768px) {
+    max-width: 21.7vw;
   }
 `;
 
