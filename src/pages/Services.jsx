@@ -144,7 +144,8 @@ const ServiceButton = styled.button`
   margin-bottom: 2vh;
 
   @media (max-width: 480px) {
-    font-size: 0.4rem;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
   }
 `;
 
