@@ -137,6 +137,11 @@ const Card = styled.div`
     height: 58vh;
     width: 58vh;
   }
+
+  @media (max-width: 480px) {
+    height: 38vh;
+    width: 38vh;
+  }
 `;
 
 const Content = styled.div`
@@ -181,6 +186,20 @@ const Section = styled.div`
     margin: 0 auto;
     padding: 0;
   }
+
+  @media (max-width: 480px) {
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
+
+    h3 {
+      z-index: 1;
+      li {
+        font-size: 0.8rem;
+      }
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
 `;
 
 const ImageSection = styled.div`
@@ -202,10 +221,14 @@ const ImageSection = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity for darkness */
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
     border-radius: 46px;
     pointer-events: none;
+  }
+
+  @media (max-width: 480px) {
+    height: 15vh;
   }
 `;
 
@@ -215,6 +238,10 @@ const CallToAction = styled.div`
   left: 0;
   padding: 3vh;
   text-align: left;
+
+  @media (max-width: 480px) {
+    bottom: -1vh;
+  }
 `;
 
 const CTAText = styled.p`
@@ -223,6 +250,12 @@ const CTAText = styled.p`
   width: 80%;
   font-family: "Gilroy-medium", sans-serif;
   margin: 0 0 16px 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    width: 90%;
+    margin: 0 0 8px 0;
+  }
 `;
 
 const CTAButton = styled.button`
@@ -265,6 +298,11 @@ const CTAButton = styled.button`
 
   &:active {
     scale: 1;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+    font-size: 0.7rem;
   }
 `;
 
