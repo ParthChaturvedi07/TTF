@@ -31,6 +31,12 @@ const PageTitle = styled.h1`
     margin: 0 2rem;
     transform: scale(2);
   }
+
+  @media (max-width: 480px) {
+    span {
+      font-size: 5rem;
+    }
+  }
 `;
 
 const ProcessList = styled.div`
@@ -42,6 +48,10 @@ const ProcessList = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 4rem;
+
+  @media (max-width: 480px) {
+    margin-bottom: 0;
+  }
 `;
 
 const ProcessCard = styled.div`
@@ -77,6 +87,13 @@ const ProcessCard = styled.div`
         return "";
     }
   }}
+
+  @media (max-width: 480px) {
+    width: 328px;
+    height: 328px;
+    left: 72%;
+    padding: 1.5rem;
+  }
 `;
 
 const CardContent = styled.div`
@@ -87,6 +104,10 @@ const CardContent = styled.div`
     0px 0px 8px 0px rgba(0, 0, 0, 0.19);
   margin-top: 2rem;
   height: calc(100% - 120px);
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `;
 
 const CardTop = styled.div`
@@ -100,6 +121,10 @@ const CardNumber = styled.div`
   font-family: "Korto-medium", sans-serif;
   font-size: 2.5rem;
   color: #000;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ProgressBar = styled.div`
@@ -125,6 +150,11 @@ const CardTitle = styled.h2`
   color: #000;
   margin-bottom: 1rem;
   line-height: 1;
+
+  @media (max-width: 480px) {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const CardDescription = styled.p`
@@ -133,6 +163,11 @@ const CardDescription = styled.p`
   color: #000;
   opacity: 0.8;
   line-height: 1.5;
+
+  @media (max-width: 480px) {
+    font-size: 0.99rem;
+    line-height: 1.1;
+  }
 `;
 
 const ProcessFooter = styled.div`
@@ -147,6 +182,11 @@ const ProcessFooter = styled.div`
   background-color: #fff;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   border-radius: 54px;
+
+  @media (max-width: 480px) {
+    padding: 1vh 3vh;
+    gap: 1rem;
+  }
 `;
 
 const FooterText = styled.p`
@@ -155,6 +195,10 @@ const FooterText = styled.p`
   line-height: 120%;
   font-size: 1.15rem;
   color: #000;
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const BookButton = styled.button`
@@ -198,6 +242,16 @@ const BookButton = styled.button`
 
   &:active {
     scale: 1;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+    padding: 0.3rem 1rem;
   }
 `;
 
