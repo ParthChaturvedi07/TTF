@@ -53,17 +53,6 @@ const PageTitle = styled.h1`
     transform: scale(2);
   }
 
-  @media (max-width: 480px) {
-    top: 0;
-    left: 4%;
-
-    span {
-      margin: 0 1rem;
-      font-size: 4rem;
-      transform: scale(1.4);
-    }
-  }
-
   @media (max-width: 1200px) and (min-width: 993px) {
     position: absolute;
     top: 7%;
@@ -88,6 +77,25 @@ const PageTitle = styled.h1`
     left: 4%;
     span {
       font-size: 4.5rem;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    top: 10%;
+    left: 0;
+    span {
+      font-size: 4rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    top: 0;
+    left: 4%;
+
+    span {
+      margin: 0 1rem;
+      font-size: 4rem;
+      transform: scale(1.4);
     }
   }
 `;
@@ -125,6 +133,11 @@ const ServicesContent = styled.div`
   //   padding: 0 1rem;
   // }
 
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 70%;
+    left: 0;
+  }
+
   @media (max-width: 480px) {
     width: 100%;
     left: 4%;
@@ -147,6 +160,11 @@ const ServiceButton = styled.button`
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
   }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 0.3rem 1.2rem;
+  }
 `;
 
 const ServiceMoto = styled.h1`
@@ -166,6 +184,11 @@ const ServiceMoto = styled.h1`
     max-width: 75%;
   }
 
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 6vh;
+    max-width: 71%;
+  }
+
   @media (max-width: 480px) {
     font-size: 4.5vh;
     max-width: 100%;
@@ -181,6 +204,11 @@ const CardWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    right: 0;
+    bottom: 3%;
+  }
 
   @media (max-width: 480px) {
     right: 8.5vh;

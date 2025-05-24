@@ -138,6 +138,11 @@ const Card = styled.div`
     width: 58vh;
   }
 
+  @media (min-width: 481px) and (max-width: 768px) {
+    height: 42vh;
+    width: 42vh;
+  }
+
   @media (max-width: 480px) {
     height: 38vh;
     width: 38vh;
@@ -187,6 +192,18 @@ const Section = styled.div`
     padding: 0;
   }
 
+  @media (min-width: 481px) and (max-width: 768px) {
+    padding: 1.3rem 1.7rem;
+    margin-bottom: 1.2rem;
+
+    h3 {
+      z-index: 1;
+      li {
+        font-size: 1rem;
+      }
+    }
+  }
+
   @media (max-width: 480px) {
     padding: 1rem 1.2rem;
     margin-bottom: 1.2rem;
@@ -196,8 +213,6 @@ const Section = styled.div`
       li {
         font-size: 0.8rem;
       }
-      margin: 0 auto;
-      padding: 0;
     }
   }
 `;
@@ -227,6 +242,10 @@ const ImageSection = styled.div`
     pointer-events: none;
   }
 
+  @media (min-width: 481px) and (max-width: 768px) {
+    height: 19vh;
+  }
+
   @media (max-width: 480px) {
     height: 15vh;
   }
@@ -239,6 +258,10 @@ const CallToAction = styled.div`
   padding: 3vh;
   text-align: left;
 
+  @media (min-width: 481px) and (max-width: 768px) {
+    bottom: 0;
+  }
+
   @media (max-width: 480px) {
     bottom: -1vh;
   }
@@ -250,6 +273,12 @@ const CTAText = styled.p`
   width: 80%;
   font-family: "Gilroy-medium", sans-serif;
   margin: 0 0 16px 0;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 1rem;
+    width: 85%;
+    margin: 0 0 12px 0;
+  }
 
   @media (max-width: 480px) {
     font-size: 0.8rem;
@@ -298,6 +327,11 @@ const CTAButton = styled.button`
 
   &:active {
     scale: 1;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    padding: 10px 19px;
+    font-size: 0.7rem;
   }
 
   @media (max-width: 480px) {
