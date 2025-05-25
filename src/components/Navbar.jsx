@@ -160,7 +160,7 @@ const HamburgerButton = styled.button`
     transform-origin: left;
 
     &:nth-child(1) {
-      transform: ${(props) => (props.isOpen ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${(props) => (props.isOpen ? "rotate(38deg)" : "rotate(0)")};
     }
 
     &:nth-child(2) {
@@ -169,7 +169,7 @@ const HamburgerButton = styled.button`
     }
 
     &:nth-child(3) {
-      transform: ${(props) => (props.isOpen ? "rotate(-45deg)" : "rotate(0)")};
+      transform: ${(props) => (props.isOpen ? "rotate(-38deg)" : "rotate(0)")};
     }
   }
 `;
