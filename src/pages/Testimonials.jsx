@@ -36,6 +36,22 @@ const PageTitle = styled.h1`
     margin: 0 2rem;
     transform: scale(2);
   }
+
+  @media (max-width: 480px) {
+    span {
+      font-size: 3.2rem;
+      margin: 0 1rem;
+      transform: scale(1.4);
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    span {
+      font-size: 4rem;
+      margin: 0 1.2rem;
+      transform: scale(1.6);
+    }
+  }
 `;
 
 const CardContainer = styled.div`
@@ -46,6 +62,10 @@ const CardContainer = styled.div`
   height: 50vh;
   width: max-content;
   margin-top: 27vh;
+
+  @media (max-width: 480px) {
+    gap: 5vw;
+  }
 `;
 
 const Card = styled.div`
@@ -84,6 +104,14 @@ const Card = styled.div`
       border: 1px solid #000;
     }
   }
+
+  @media (max-width: 480px) {
+    width: 70vw;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 40vw;
+  }
 `;
 
 const TopContent = styled.div`
@@ -95,6 +123,14 @@ const TopContent = styled.div`
   padding: 1.48vh;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+
+  @media (max-width: 480px) {
+    gap: 0.6rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    gap: 0.8rem;
+  }
 `;
 
 const VideoWrapper = styled.div`
@@ -107,6 +143,14 @@ const VideoWrapper = styled.div`
 
   &:hover .play-button {
     opacity: 1;
+  }
+
+  @media (max-width: 480px) {
+    height: 20vh;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    height: 27vh;
   }
 `;
 
@@ -142,6 +186,16 @@ const PlayButton = styled.button`
     height: 20px;
     fill: white;
   }
+
+  @media (max-width: 480px) {
+    width: 35px;
+    height: 35px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 43px;
+    height: 43px;
+  }
 `;
 
 const BasicInfo = styled.div`
@@ -155,6 +209,14 @@ const Name = styled.h3`
   font-size: 18px;
   color: #000;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 15px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const Title = styled.p`
@@ -163,6 +225,14 @@ const Title = styled.p`
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
   margin: 4px 0 0 0;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 const ExpandedContent = styled.div`
@@ -184,10 +254,18 @@ const Testimonial = styled.div`
   line-height: 130%;
   color: #000;
   background: #fff;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
 
 const BasicInfos = styled.div`
-  border-top: 1px solid #000;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   background-color: #fffbea;
   padding: 1rem;
   width: 100%;
@@ -199,8 +277,16 @@ const BasicInfos = styled.div`
 const VisitSite = styled.a`
   font-family: "Gilroy-medium", sans-serif;
   font-size: 0.9rem;
-  color: #000;
-  text-decoration: underline;
+  color: #fe7105;
+  text-decoration: none;
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 0.88rem;
+  }
 `;
 
 const TestimonialCard = ({ video, name, title, quote }) => {
@@ -283,20 +369,60 @@ export const Testimonials = () => {
       ease: "expo.out",
     });
 
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        scroller: "body",
-        markers: false,
-        start: "top 0",
-        end: "top -120%",
-        scrub: 1.5,
-        pin: true,
-      },
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          scroller: "body",
+          markers: false,
+          start: "top 0",
+          end: "top -120%",
+          scrub: 1.5,
+          pin: true,
+        },
+      });
+      tl2.to(cardsContainerRef.current, {
+        transform: "translate(-48%)",
+        ease: "linear",
+      });
     });
-    tl2.to(cardsContainerRef.current, {
-      transform: "translate(-48%)",
-      ease: "linear",
+
+    mm.add("(min-width: 481px) and (max-width: 768px)", () => {
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          scroller: "body",
+          markers: false,
+          start: "top 0",
+          end: "top -120%",
+          scrub: 1.5,
+          pin: true,
+        },
+      });
+      tl2.to(cardsContainerRef.current, {
+        transform: "translate(-65%)",
+        ease: "linear",
+      });
+    });
+
+    mm.add("(max-width: 480px)", () => {
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          scroller: "body",
+          markers: false,
+          start: "top 0",
+          end: "top -120%",
+          scrub: 1.5,
+          pin: true,
+        },
+      });
+      tl2.to(cardsContainerRef.current, {
+        transform: "translate(-81%)",
+        ease: "linear",
+      });
     });
 
     // 🔁 Add resize listener for ScrollTrigger refresh
@@ -393,7 +519,8 @@ export const Testimonials = () => {
   ];
 
   return (
-    <TestimonialSection id="testimonials"
+    <TestimonialSection
+      id="testimonials"
       style={{
         padding: "4vh",
       }}
