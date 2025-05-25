@@ -204,6 +204,7 @@ const CardWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  // background-color: gray;
 
   @media (min-width: 481px) and (max-width: 768px) {
     right: 0;
@@ -211,20 +212,20 @@ const CardWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    right: 8.5vh;
+    right: 6.5vh;
     bottom: -15%;
     width: 100%;
   }
 `;
 
-const CardsContainer = styled.div`
-  position: absolute;
-  // top: 18%;
-  // right: -26%;
-  height: 100%;
-  width: 100%;
-  // background-color: pink;
-`;
+// const CardsContainer = styled.div`
+//   position: relative;
+//   // top: 18%;
+//   // right: -26%;
+//   height: 100%;
+//   width: 100%;
+//   // background-color: pink;
+// `;
 
 const serviceContentData = [
   {
@@ -514,9 +515,9 @@ export const Services = () => {
           </ServicesContent>
 
           <CardWrapper>
-            <CardsContainer>
-              <DynamicCardList ref={CardRef} />
-            </CardsContainer>
+            {/* <CardsContainer> */}
+            <DynamicCardList ref={CardRef} />
+            {/* </CardsContainer> */}
           </CardWrapper>
         </ServicesContainer>
       </Container>
