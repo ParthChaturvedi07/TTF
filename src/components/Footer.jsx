@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import facebook from "../assets/icons/facebook.svg";
 import insta from "../assets/icons/instagram.svg";
-import twitter from "../assets/icons/X.svg";
+import whatsapp from "../assets/icons/whatsapp.svg";
 import linkedin from "../assets/icons/Linkedin.svg";
 
 const FooterContainer = styled.footer`
@@ -13,6 +13,13 @@ const FooterContainer = styled.footer`
   gap: 4rem;
   margin-top: 10vh;
   z-index: 100;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    padding: 3rem;
+    gap: 2rem;
+  }
 `;
 
 const LogoSection = styled.div`
@@ -21,6 +28,12 @@ const LogoSection = styled.div`
     font-size: 4rem;
     line-height: 1;
     margin-bottom: 2rem;
+
+    @media (max-width: 480px) {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
   }
 `;
 
@@ -28,6 +41,10 @@ const SocialLinks = styled.div`
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+
+  @media (max-width: 480px) {
+    margin-top: 0rem;
+  }
 `;
 
 const SocialIcon = styled.a`
@@ -44,11 +61,6 @@ const SocialIcon = styled.a`
 
   &:hover {
     transform: translateY(-3px);
-  }
-
-  svg {
-    font-size: 1.2rem;
-    color: #000;
   }
 
   img {
@@ -85,6 +97,18 @@ const Column = styled.div`
       opacity: 0.7;
     }
   }
+
+  @media (max-width: 480px) {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
 `;
 
 const ContactInfo = styled.div`
@@ -93,9 +117,24 @@ const ContactInfo = styled.div`
     margin-bottom: 1.25rem;
     line-height: 1.5;
   }
+
+  @media (max-width: 480px) {
+    p {
+      margin-bottom: 0rem;
+      line-height: 1.3;
+    }
+  }
 `;
 
 export const Footer = () => {
+  const handleFooterLinkClick = (event, sectionId) => {
+    event.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <FooterContainer>
       <LogoSection>
@@ -105,16 +144,16 @@ export const Footer = () => {
           FOODS
         </h1>
         <SocialLinks>
-          <SocialIcon href="#">
+          <SocialIcon href="https://www.facebook.com/techtastefoods">
             <img src={facebook} alt="" />
           </SocialIcon>
-          <SocialIcon href="#">
+          <SocialIcon href="https://www.instagram.com/techtastefoods/">
             <img src={insta} alt="" />
           </SocialIcon>
-          <SocialIcon href="#">
-            <img src={twitter} alt="" />
+          <SocialIcon href="https://chat.whatsapp.com/JHzWgm4DJcEClXfZ3fMXM9">
+            <img src={whatsapp} alt="" />
           </SocialIcon>
-          <SocialIcon href="#">
+          <SocialIcon href="https://www.linkedin.com/company/techtasteinternational/">
             <img src={linkedin} alt="" />
           </SocialIcon>
         </SocialLinks>
@@ -124,16 +163,33 @@ export const Footer = () => {
         <h2>Company</h2>
         <ul>
           <li>
-            <a href="#">About Us</a>
+            <a
+              href="#about-us"
+              onClick={(e) => handleFooterLinkClick(e, "home")}
+            >
+              About Us
+            </a>
           </li>
           <li>
-            <a href="#">Clients</a>
+            <a href="#stats" onClick={(e) => handleFooterLinkClick(e, "stats")}>
+              Stats
+            </a>
           </li>
           <li>
-            <a href="#">Services</a>
+            <a
+              href="#process"
+              onClick={(e) => handleFooterLinkClick(e, "process")}
+            >
+              Process
+            </a>
           </li>
           <li>
-            <a>Careers</a>
+            <a
+              href="#clients"
+              onClick={(e) => handleFooterLinkClick(e, "clients")}
+            >
+              Clients
+            </a>
           </li>
         </ul>
       </Column>
@@ -142,7 +198,9 @@ export const Footer = () => {
         <h2>Stay Updated</h2>
         <ul>
           <li>
-            <a href="#">FAQs</a>
+            <a href="#faq" onClick={(e) => handleFooterLinkClick(e, "faq")}>
+              FAQs
+            </a>
           </li>
           <li>
             <a href="#">Blogs</a>

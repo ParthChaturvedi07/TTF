@@ -298,7 +298,7 @@ export const Stats = () => {
   }, []);
 
   return (
-    <StatsSection ref={statsSectionRef}>
+    <StatsSection id="stats" ref={statsSectionRef}>
       <StatsContainer ref={containerRef}>
         {[...stats, ...stats, ...stats].map((stat, index) => (
           <StatBall key={index}>

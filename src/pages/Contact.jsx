@@ -241,7 +241,7 @@ const ScheduleButton = styled.a`
   }
 
   @media (max-width: 600px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0.6rem;
   }
 `;

@@ -159,70 +159,8 @@ export const Clients = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // useGSAP(() => {
-  //   gsap
-  //     .timeline({
-  //       scrollTrigger: {
-  //         trigger: statsSectionRef.current,
-  //         pin: true,
-  //         // markers: true,
-  //         pinSpacing: false,
-  //         start: "top top",
-  //         end: "bottom top",
-  //         scrub: 1,
-  //       },
-  //     })
-  //     .to(statsSectionRef.current, {
-  //       opacity: 0,
-  //       duration: 1,
-  //     });
-
-  //   // Fixed number ticker animation
-  //   valueRefs.current.forEach((valueRef, index) => {
-  //     const value = stats[index % stats.length].value;
-  //     const numericValue = parseInt(value.replace(/[^0-9]/g, ""));
-
-  //     gsap.fromTo(
-  //       valueRef,
-  //       { innerText: 0 },
-  //       {
-  //         scrollTrigger: {
-  //           trigger: valueRef,
-  //           start: "top 80%",
-  //           end: "top 50%",
-  //           once: true,
-  //         },
-  //         innerText: numericValue,
-  //         duration: 2,
-  //         snap: { innerText: 1 },
-  //         ease: "power1.inOut",
-  //         modifiers: {
-  //           innerText: (value) => {
-  //             const num = Math.min(Math.round(Number(value)), numericValue);
-  //             const originalValue = stats[index % stats.length].value;
-  //             if (originalValue === "0") return "0";
-  //             if (originalValue.includes("Cr")) return `₹${num}Cr+`;
-  //             if (originalValue.includes("%")) return `${num}%`;
-  //             return `${num}+`;
-  //           },
-  //         },
-  //       }
-  //     );
-  //   });
-
-  //   // 🔁 Add resize listener for ScrollTrigger refresh
-  //   const handleResize = () => ScrollTrigger.refresh();
-  //   window.addEventListener("resize", handleResize);
-
-  //   // 🧹 Cleanup
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  //   };
-  // }, []);
-
   return (
-    <ClientsSection ref={clientsSectionRef}>
+    <ClientsSection id="clients" ref={clientsSectionRef}>
       <ClientsContainer ref={containerRef}>
         {[...clients, ...clients, ...clients].map((client, index) => (
           <ClientLogo key={index}>
