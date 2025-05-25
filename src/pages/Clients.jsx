@@ -52,6 +52,18 @@ const ClientsSection = styled.div`
     right: 0;
     background: linear-gradient(to left, #f5f5f5 0%, transparent 100%);
   }
+
+  @media (max-width: 480px) {
+    min-height: 40vh;
+
+    &::before {
+      left: -15%;
+    }
+
+    &::after {
+      right: -15%;
+    }
+  }
 `;
 
 const ClientsContainer = styled.div`
@@ -101,6 +113,11 @@ const ClientLogo = styled.div`
     transform: scale(1.05);
     z-index: 3;
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22), 0 3px 8px rgba(0, 0, 0, 0.13);
+  }
+
+  @media (max-width: 480px) {
+    width: 170px;
+    height: 170px;
   }
 `;
 

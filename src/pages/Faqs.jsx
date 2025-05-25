@@ -31,6 +31,12 @@ const PageTitle = styled.h1`
     margin: 0 2rem;
     transform: scale(2);
   }
+
+  @media (max-width: 480px) {
+    span {
+      font-size: 5rem;
+    }
+  }
 `;
 
 const FaqContainer = styled.div`
@@ -40,6 +46,11 @@ const FaqContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   margin-top: 25vh;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    margin-top: 15vh;
+  }
 `;
 
 const FaqItem = styled.div.attrs(({ isActive, ...rest }) => rest)`
@@ -62,6 +73,11 @@ const QuestionHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    padding: 1rem 1.5rem;
+    gap: 2vh;
+  }
 `;
 
 const Question = styled.h3`
@@ -70,6 +86,10 @@ const Question = styled.h3`
   font-size: 1.1rem;
   color: #000;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ToggleIcon = styled.div`
@@ -102,6 +122,11 @@ const ToggleIcon = styled.div`
     top: 0;
     transform: translateX(-50%);
   }
+
+  @media (max-width: 480px) {
+    width: 10px;
+    height: 10px;
+  }
 `;
 
 const Answer = styled.div.attrs(({ isActive, ...rest }) => rest)`
@@ -113,6 +138,9 @@ const Answer = styled.div.attrs(({ isActive, ...rest }) => rest)`
   font-family: "Gilroy", sans-serif;
   font-weight: 500;
   color: #000;
+
+  @media (max-width: 480px) {
+  }
 `;
 
 export const Faqs = () => {
