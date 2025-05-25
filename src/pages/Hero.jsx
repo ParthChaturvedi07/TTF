@@ -52,7 +52,7 @@ const Wrapper = styled.section`
     margin-top: 8vh;
 
     @media (max-width: 480px) {
-      margin-bottom: -5vh;
+      margin-bottom: 5vh;
     }
   }
   .image-trail {

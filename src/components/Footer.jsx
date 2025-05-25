@@ -15,6 +15,18 @@ const FooterContainer = styled.footer`
   z-index: 100;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
 
+  @media (min-width: 769px) and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+    gap: 2rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem 2rem;
+    gap: 2.5rem;
+  }
+
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
     padding: 3rem;
@@ -28,6 +40,16 @@ const LogoSection = styled.div`
     font-size: 4rem;
     line-height: 1;
     margin-bottom: 2rem;
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      font-size: 3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      font-size: 3.2rem;
+      margin-bottom: 1.2rem;
+    }
 
     @media (max-width: 480px) {
       font-size: 3rem;
@@ -98,6 +120,51 @@ const Column = styled.div`
     }
   }
 
+  @media (min-width: 769px) and (max-width: 1024px) {
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.35rem;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    h2 {
+      margin-bottom: 1.2rem;
+      font-size: 1.3rem;
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+
+    a {
+      font-size: 1.1rem;
+    }
+  }
+
   @media (max-width: 480px) {
     text-align: center;
 
@@ -116,6 +183,22 @@ const ContactInfo = styled.div`
     font-family: "Gilroy-medium", sans-serif;
     margin-bottom: 1.25rem;
     line-height: 1.5;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    p {
+      margin-bottom: 0.7rem;
+      font-size: 1rem;
+      text-align: left;
+    }
   }
 
   @media (max-width: 480px) {
