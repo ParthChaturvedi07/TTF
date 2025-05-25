@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import ellipse from "./assets/icons/ellipse.svg";
 import Lenis from "@studio-freight/lenis";
 import GlobalStyles from "./styles/GlobalStyles";
 import { Navbar } from "./components/Navbar";
@@ -83,9 +82,7 @@ export const App = () => {
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div> */}
-      <div className="blur-center">
-        <img src={ellipse} alt="" />
-      </div>
+      
       <GlobalStyles />
       <Navbar />
       <Hero />

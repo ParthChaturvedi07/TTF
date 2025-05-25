@@ -1,4 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
+import ellipse from "../assets/icons/ellipse.svg";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
@@ -623,43 +624,49 @@ export const Hero = () => {
   }, []);
 
   return (
-    <Wrapper id="home" ref={WrapperRef}>
-      <div className="hero-content">
-        <HeadingTop ref={HeadingTopRef}>
-          <h3>Helping Restaurants Grow since 2014</h3>
-          <img src={sparkle} alt="" />
-        </HeadingTop>
+    <>
+      <Wrapper id="home" ref={WrapperRef}>
+        <div className="blur-center">
+          <img src={ellipse} alt="" />
+        </div>
 
-        <Heading className="title" ref={HeadingRef}>
-          <div className="1">Are you ready to </div> <br />
-          <div className="2">make your restaurant</div>
-          <br />
-          <span>meh to money ?</span>
-        </Heading>
-        <Subheading className="para">
-          We help restaurants, cloud kitchens, and food brands grow by improving
-          menus, fixing operations, and running marketing that brings real
-          results.
-        </Subheading>
-        <CTAButton ref={ctaButtonRef}>Start my growth journey</CTAButton>
-      </div>
+        <div className="hero-content">
+          <HeadingTop ref={HeadingTopRef}>
+            <h3>Helping Restaurants Grow since 2014</h3>
+            <img src={sparkle} alt="" />
+          </HeadingTop>
 
-      <video
-        className="hero-video"
-        ref={HeroVideo}
-        src={hero_video}
-        autoPlay
-        muted
-        loop
-      />
+          <Heading className="title" ref={HeadingRef}>
+            <div className="1">Are you ready to </div> <br />
+            <div className="2">make your restaurant</div>
+            <br />
+            <span>meh to money ?</span>
+          </Heading>
+          <Subheading className="para">
+            We help restaurants, cloud kitchens, and food brands grow by
+            improving menus, fixing operations, and running marketing that
+            brings real results.
+          </Subheading>
+          <CTAButton ref={ctaButtonRef}>Start my growth journey</CTAButton>
+        </div>
 
-      <WhoAreWeContainer ref={WhoAreWeRef}>
-        <WhoAreWe
-          headingRef={WhoHeadingRef}
-          paraRef={WhoParaRef}
-          calloutRef={WhoCalloutRef}
+        <video
+          className="hero-video"
+          ref={HeroVideo}
+          src={hero_video}
+          autoPlay
+          muted
+          loop
         />
-      </WhoAreWeContainer>
-    </Wrapper>
+
+        <WhoAreWeContainer ref={WhoAreWeRef}>
+          <WhoAreWe
+            headingRef={WhoHeadingRef}
+            paraRef={WhoParaRef}
+            calloutRef={WhoCalloutRef}
+          />
+        </WhoAreWeContainer>
+      </Wrapper>
+    </>
   );
 };
