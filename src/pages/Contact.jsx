@@ -38,6 +38,20 @@ const PageTitle = styled.h1`
   span:nth-of-type(7) {
     margin: 0 1rem;
   }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    span {
+      font-size: 5rem;
+      margin: 0 1.2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    span {
+      font-size: 3rem;
+      margin: 0 1.2rem;
+    }
+  }
 `;
 
 const Connect = styled.div`
@@ -47,6 +61,17 @@ const Connect = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 1rem;
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    width: 100%;
+    padding: 0rem;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
 `;
 
 const ContactInfoContainer = styled.div`
@@ -54,6 +79,14 @@ const ContactInfoContainer = styled.div`
   flex-direction: column;
   flex: 1;
   gap: 0.5rem;
+
+  @media (max-width: 600px) {
+    gap: 0.2rem;
+  }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    gap: 0.3rem;
+  }
 `;
 
 const ContactInfo = styled.div`
@@ -64,6 +97,14 @@ const ContactInfo = styled.div`
   padding: 2rem;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+  }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    padding: 1.5rem;
+  }
 `;
 
 const InfoCard = styled.div`
@@ -105,6 +146,14 @@ const InfoText = styled.p`
   opacity: 91%;
   font-size: 0.9rem;
   margin: 0;
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    font-size: 0.87rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const HateFormContainer = styled.div`
@@ -113,12 +162,28 @@ const HateFormContainer = styled.div`
   border-radius: 20px;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   margin-top: 1rem;
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.2rem;
+  }
 `;
 
 const HateFormTitle = styled.h2`
   font-family: "Korto-bold", sans-serif;
   font-size: 2.5rem;
   margin: 0;
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    font-size: 2.3rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 2rem;
+  }
 `;
 
 const HateFormText = styled.p`
@@ -168,6 +233,16 @@ const ScheduleButton = styled.a`
 
   &:active {
     scale: 1;
+  }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    padding: 0.6rem;
   }
 `;
 

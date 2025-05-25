@@ -49,7 +49,7 @@ const FaqContainer = styled.div`
 
   @media (max-width: 480px) {
     width: 100%;
-    margin-top: 15vh;
+    margin-top: 20vh;
   }
 `;
 
@@ -140,6 +140,7 @@ const Answer = styled.div.attrs(({ isActive, ...rest }) => rest)`
   color: #000;
 
   @media (max-width: 480px) {
+    padding: ${(props) => (props.isActive ? "0.8rem 1.5rem" : "0 2rem")};
   }
 `;
 
