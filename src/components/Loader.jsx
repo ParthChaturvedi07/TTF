@@ -144,7 +144,7 @@ export const Loader = ({ onComplete }) => {
         progressBar,
         {
           scaleX: 1 - (i + 1) / headlines.length,
-          duration: 1.85,
+          duration: 3,
           ease: "power1.inOut",
           onUpdate: () => {
             const currentScale = gsap.getProperty(progressBar, "scaleX");
