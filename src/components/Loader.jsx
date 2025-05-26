@@ -56,6 +56,10 @@ const LoadingText = styled.div`
       }
     }
   }
+
+  @media (max-width: 481px) {
+    margin-bottom: 5vh;
+  }
 `;
 
 const ProgressBar = styled.div`
