@@ -99,15 +99,15 @@ const StatBall = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 180px;
-    height: 180px;
+    width: 240px;
+    height: 240px;
     border-radius: 46px;
     padding: 1rem;
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
     border-radius: 40px;
     padding: 1.2rem;
   }
@@ -125,10 +125,6 @@ const StatValueContainer = styled.div`
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   margin-bottom: 0.5rem;
 
-  @media (max-width: 480px) {
-    padding: 1rem;
-  }
-
   @media (min-width: 481px) and (max-width: 768px) {
     padding: 1.25rem;
   }
@@ -141,11 +137,11 @@ const StatValue = styled.div`
   line-height: 1;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
-    font-size: 1.67rem;
+    font-size: 1.97rem;
   }
 `;
 
@@ -154,16 +150,6 @@ const StatTitle = styled.div`
   font-size: 1.2rem;
   color: #000;
   padding: 0.3rem 1rem;
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-    padding: 0.1rem 0.4rem;
-  }
-
-  @media (min-width: 481px) and (max-width: 768px) {
-    font-size: 1.15rem;
-    padding: 0.25rem 0.8rem;
-  }
 `;
 
 const StatDescription = styled.div`
@@ -173,14 +159,6 @@ const StatDescription = styled.div`
   max-width: 80%;
   text-align: center;
   line-height: 1.4;
-
-  @media (max-width: 480px) {
-    font-size: 0.7rem;
-  }
-
-  @media (min-width: 481px) and (max-width: 768px) {
-    font-size: 0.8rem;
-  }
 `;
 
 export const Stats = () => {
