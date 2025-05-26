@@ -8,7 +8,7 @@ const LoaderContainer = styled.div`
   height: 100vh;
   width: 100%;
   padding: 3vh 10vh;
-  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -50,6 +50,10 @@ const LoadingText = styled.div`
       font-size: clamp(2.5rem, 5vw, 4.5rem);
       color: #000;
       opacity: 0.4;
+
+      @media (max-width: 481px) {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+      }
     }
   }
 `;
@@ -144,8 +148,8 @@ export const Loader = ({ onComplete }) => {
         progressBar,
         {
           scaleX: 1 - (i + 1) / headlines.length,
-          duration: 3,
-          ease: "power1.inOut",
+          duration: 1.5,
+          ease: "power4.inOut",
           onUpdate: () => {
             const currentScale = gsap.getProperty(progressBar, "scaleX");
             progressBar.style.setProperty("--progress-scale", currentScale);
