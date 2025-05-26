@@ -205,7 +205,6 @@ const CTAButton = styled.button`
   font-family: "Gilroy-semibold", san-serif;
   font-size: 1rem;
   border-radius: 999px;
-  cursor: pointer;
   color: #ffffff;
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.16);
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);

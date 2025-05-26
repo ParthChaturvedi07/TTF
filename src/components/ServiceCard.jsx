@@ -350,6 +350,19 @@ const ServiceCard = ({ cardData }) => {
       ? cardData.sections[hoveredIndex].image
       : cardData.sections[0].image;
 
+  const handleGoogleCalendarClick = () => {
+    const calendarUrl =
+      "https://calendar.google.com/calendar/render?" +
+      "action=TEMPLATE" +
+      "&text=Discovery+Call+with+Tech Taste Foods" +
+      "&dates=20250601T110000Z/20250601T113000Z" +
+      "&details=Let%27s+discuss+your+project!+Call+me+at+%2B+91-9643422824" +
+      "&location=Online" +
+      "&sf=true&output=xml";
+
+    window.open(calendarUrl, "_blank");
+  };
+
   return (
     <Card>
       <Content>
@@ -378,7 +391,9 @@ const ServiceCard = ({ cardData }) => {
           />
           <CallToAction>
             <CTAText>{cardData.ctaText}</CTAText>
-            <CTAButton>{cardData.ctaButton}</CTAButton>
+            <CTAButton onClick={handleGoogleCalendarClick}>
+              {cardData.ctaButton}
+            </CTAButton>
           </CallToAction>
         </div>
       </Content>

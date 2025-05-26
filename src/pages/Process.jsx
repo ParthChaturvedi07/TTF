@@ -385,6 +385,19 @@ export const Process = () => {
     }
   }, [cards]);
 
+  const handleGoogleCalendarClick = () => {
+    const calendarUrl =
+      "https://calendar.google.com/calendar/render?" +
+      "action=TEMPLATE" +
+      "&text=Discovery+Call+with+Tech Taste Foods" +
+      "&dates=20250601T110000Z/20250601T113000Z" +
+      "&details=Let%27s+discuss+your+project!+Call+me+at+%2B+91-9643422824" +
+      "&location=Online" +
+      "&sf=true&output=xml";
+
+    window.open(calendarUrl, "_blank");
+  };
+
   return (
     <ProcessSection id="process" ref={processSectionRef}>
       <PageTitle ref={pageTitleRef}>
@@ -420,7 +433,7 @@ export const Process = () => {
           We'll deep-dive into your brand and explore how we can add value from
           day one.
         </FooterText>
-        <BookButton>Book a Free Discovery Call with us</BookButton>
+        <BookButton onClick={handleGoogleCalendarClick}>Book a Free Discovery Call with us</BookButton>
       </ProcessFooter>
     </ProcessSection>
   );

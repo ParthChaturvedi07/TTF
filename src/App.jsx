@@ -9,7 +9,7 @@ import { Testimonials } from "./pages/Testimonials";
 import { Gallery } from "./pages/Gallery";
 import { Faqs } from "./pages/Faqs";
 import { Contact } from "./pages/Contact";
-import { Clients } from "./pages/Clients"; // If you use later
+import { Clients } from "./pages/Clients"; 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Process } from "./pages/Process";
@@ -65,27 +65,6 @@ export const App = () => {
 
   return (
     <div>
-      {/* <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div> */}
-
       <GlobalStyles />
       <Loader onComplete={() => setIsLoading(false)} />
       {!isLoading && (

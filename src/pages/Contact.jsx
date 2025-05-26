@@ -192,13 +192,13 @@ const HateFormText = styled.p`
   margin: 1rem 0;
 `;
 
-const ScheduleButton = styled.a`
-  display: inline-block;
+const ScheduleButton = styled.button`
   width: 100%;
   padding: 1rem;
   background: #fcb731;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  border: none;
   font-family: "Gilroy-semibold", sans-serif;
   font-size: 1rem;
   text-align: center;
@@ -384,6 +384,19 @@ export const Contact = () => {
       );
   }, []);
 
+  const handleGoogleCalendarClick = () => {
+    const calendarUrl =
+      "https://calendar.google.com/calendar/render?" +
+      "action=TEMPLATE" +
+      "&text=Discovery+Call+with+Tech Taste Foods" +
+      "&dates=20250601T110000Z/20250601T113000Z" +
+      "&details=Let%27s+discuss+your+project!+Call+me+at+%2B+91-9643422824" +
+      "&location=Online" +
+      "&sf=true&output=xml";
+
+    window.open(calendarUrl, "_blank");
+  };
+
   return (
     <>
       <ContactSection id="contact" ref={contactSectionRef}>
@@ -444,7 +457,7 @@ export const Contact = () => {
                 We get you. So let's skip the small talk. Book a free strategy
                 call — no strings, no spam, just real convo.
               </HateFormText>
-              <ScheduleButton href="tel:+1234567890">
+              <ScheduleButton onClick={handleGoogleCalendarClick}>
                 Schedule a FREE meeting with us!
               </ScheduleButton>
             </HateFormContainer>
