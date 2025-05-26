@@ -322,7 +322,7 @@ export const Hero = () => {
   }, []);
 
   useGSAP(() => {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({ paused: true });
 
     let spliting = SplitText.create(".title", {
       type: "words",
@@ -394,6 +394,8 @@ export const Hero = () => {
         },
         "reveal"
       );
+
+    tl.play();
 
     let mm = gsap.matchMedia();
 
@@ -614,6 +616,9 @@ export const Hero = () => {
 
     return () => {
       mm.revert();
+      tl.kill();
+      spliting.revert();
+      splited.revert();
       window.removeEventListener("resize", handleResize);
       const triggers = ScrollTrigger.getAll().filter(
         (t) => t.trigger === WrapperRef.current

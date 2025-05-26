@@ -87,14 +87,15 @@ const NavLinks = styled.div`
     align-items: flex-start;
     flex-direction: column;
     gap: 2rem;
-    top: -18%;
+    top: 0%;
     right: 0;
-    height: 100vh;
+    height: 97vh;
     width: 60%;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     padding: 6rem 1rem;
-    transform: translateX(${(props) => (props.isOpen ? "10%" : "110%")});
+    transform: translateX(${(props) => (props.isOpen ? "5%" : "110%")});
     transition: transform 0.3s ease-in-out;
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
   }

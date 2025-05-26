@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import GlobalStyles from "./styles/GlobalStyles";
 import { Navbar } from "./components/Navbar";
@@ -14,10 +14,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Process } from "./pages/Process";
 import { Footer } from "./components/Footer";
+import { Loader } from "./components/Loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     // Initialize Lenis with optimal settings
     const lenis = new Lenis({
@@ -82,21 +85,25 @@ export const App = () => {
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div> */}
-      
+
       <GlobalStyles />
-      <Navbar />
-      <Hero />
-      <Stats />
-      <div style={{ position: "relative", zIndex: 2 }}>
-        <Services />
-        <Process />
-        <Testimonials />
-        <Clients />
-        {/* <Gallery /> */}
-        <Faqs />
-        <Contact />
-        <Footer />
-      </div>
+      <Loader onComplete={() => setIsLoading(false)} />
+      {!isLoading && (
+        <>
+          <Navbar />
+          <Hero />
+          <Stats />
+          <div style={{ position: "relative", zIndex: 2 }}>
+            <Services />
+            <Process />
+            <Testimonials />
+            <Clients />
+            <Faqs />
+            <Contact />
+            <Footer />
+          </div>
+        </>
+      )}
     </div>
   );
 };
