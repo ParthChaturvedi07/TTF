@@ -50,12 +50,13 @@ const Wrapper = styled.section`
     gap: 2rem;
     position: relative;
     z-index: 3;
-    margin-top: 8vh;
+    margin-top: 17vh;
 
     @media (max-width: 480px) {
       margin-bottom: 5vh;
     }
   }
+
   .image-trail {
     position: absolute;
     border-radius: 10px;
@@ -135,7 +136,7 @@ const Heading = styled.h1`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  line-height: 0.2;
+  line-height: 0.1;
 
   div {
     font-family: "Korto-bold", sans-serif;
@@ -178,7 +179,7 @@ const Subheading = styled.p`
   }
   max-width: 53vw;
   text-align: center;
-  margin-top: 1.2rem;
+  // margin-top: 1.2rem;
 
   @media (max-width: 480px) {
     div {

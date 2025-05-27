@@ -23,7 +23,10 @@ export const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initialize Lenis with optimal settings
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    if (isTouchDevice) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -33,7 +36,7 @@ export const App = () => {
       touchMultiplier: 2,
       smooth: true,
       normalizeWheel: true,
-      smoothTouch: false, // Better mobile performance
+      smoothTouch: false,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -52,14 +55,19 @@ export const App = () => {
       }
     };
 
+    const handleResize = () => {
+      ScrollTrigger.refresh(); // <== this is important
+    };
+
+    window.addEventListener("resize", handleResize);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
-    // Make lenis available globally for debugging
     window.lenis = lenis;
 
     return () => {
       lenis.destroy();
       gsap.ticker.remove(lenis.raf);
+      window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
