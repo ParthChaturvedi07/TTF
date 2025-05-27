@@ -67,7 +67,10 @@ const Logo = styled.div`
   cursor: pointer;
 `;
 
-const LogoImage = styled.img``;
+const LogoImage = styled.img`
+  height: 100%;
+  width: 100%;
+`;
 
 const NavLinks = styled.div`
   display: flex;
