@@ -25,7 +25,7 @@ const PageTitle = styled.h1`
   span {
     font-family: "Korto-bold", sans-serif;
     font-weight: 700;
-    font-size: 7rem;
+    font-size: 5.5rem;
     display: inline-block;
     transform-origin: center;
     margin: 0 2rem;
@@ -34,7 +34,8 @@ const PageTitle = styled.h1`
 
   @media (max-width: 480px) {
     span {
-      font-size: 5rem;
+      margin: 0 1rem;
+      font-size: 3rem;
     }
   }
 `;
@@ -401,6 +402,10 @@ export const Process = () => {
   return (
     <ProcessSection id="process" ref={processSectionRef}>
       <PageTitle ref={pageTitleRef}>
+        <span>O</span>
+        <span>u</span>
+        <span>r</span>
+        <span>&nbsp;</span>
         <span>P</span>
         <span>r</span>
         <span>o</span>
@@ -433,7 +438,9 @@ export const Process = () => {
           We'll deep-dive into your brand and explore how we can add value from
           day one.
         </FooterText>
-        <BookButton onClick={handleGoogleCalendarClick}>Book a Free Discovery Call with us</BookButton>
+        <BookButton onClick={handleGoogleCalendarClick}>
+          Book a Free Discovery Call with us
+        </BookButton>
       </ProcessFooter>
     </ProcessSection>
   );

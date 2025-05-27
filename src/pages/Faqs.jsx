@@ -25,7 +25,7 @@ const PageTitle = styled.h1`
   span {
     font-family: "Korto-bold", sans-serif;
     font-weight: 700;
-    font-size: 7rem;
+    font-size: 5rem;
     display: inline-block;
     transform-origin: center;
     margin: 0 2rem;
@@ -34,7 +34,7 @@ const PageTitle = styled.h1`
 
   @media (max-width: 480px) {
     span {
-      font-size: 5rem;
+      font-size: 3rem;
     }
   }
 `;

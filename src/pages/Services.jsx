@@ -36,70 +36,6 @@ const ServicesContainer = styled.div`
   // background-color: blue;
 `;
 
-const PageTitle = styled.h1`
-  position: absolute;
-  top: 5%;
-  left: 4%;
-  display: flex;
-
-  span {
-    font-family: "Korto-bold", sans-serif;
-    font-weight: 700;
-    font-size: clamp(2.5rem, 5vw, 5.5rem);
-    display: inline-block;
-    transform-origin: center;
-    margin: 0 2rem;
-    font-size: 7rem;
-    transform: scale(2);
-  }
-
-  @media (max-width: 1200px) and (min-width: 993px) {
-    position: absolute;
-    top: 7%;
-    left: 4%;
-    span {
-      font-size: 5.7rem;
-    }
-  }
-
-  /* For screens between 992px and 900px */
-  @media (max-width: 992px) and (min-width: 901px) {
-    top: 9%;
-    left: 4%;
-    span {
-      font-size: 5rem;
-    }
-  }
-
-  /* For screens between 900px and 768px */
-  @media (max-width: 900px) and (min-width: 768px) {
-    top: 10%;
-    left: 4%;
-    span {
-      font-size: 4.5rem;
-    }
-  }
-
-  @media (min-width: 481px) and (max-width: 768px) {
-    top: 10%;
-    left: 0;
-    span {
-      font-size: 4rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    top: 0;
-    left: 4%;
-
-    span {
-      margin: 0 1rem;
-      font-size: 4rem;
-      transform: scale(1.4);
-    }
-  }
-`;
-
 const ServicesContent = styled.div`
   position: absolute;
   width: 60%;
@@ -140,7 +76,7 @@ const ServicesContent = styled.div`
 
   @media (max-width: 480px) {
     width: 100%;
-    left: 4%;
+    left: 0;
     top: 15%;
   }
 `;
@@ -159,6 +95,11 @@ const ServiceButton = styled.button`
   @media (max-width: 480px) {
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
+    margin-left: 18vw;
+
+    &.last-two {
+      margin-left: 14vw;
+    }
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
@@ -192,6 +133,7 @@ const ServiceMoto = styled.h1`
   @media (max-width: 480px) {
     font-size: 4.5vh;
     max-width: 100%;
+    text-align: center;
   }
 `;
 
@@ -254,30 +196,8 @@ export const Services = () => {
   const ServiceContentRef = useRef(null);
   const CardRef = useRef(null);
   const ContainerRef = useRef(null);
-  const pageTitleRef = useRef(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ContainerRef.current,
-        scroller: "body",
-        start: "top: 70%",
-        end: "top 30%",
-        // markers: true,
-        scrub: 1.2,
-      },
-    });
-
-    const spans = pageTitleRef.current.querySelectorAll("span");
-
-    tl.to(spans, {
-      scale: 1,
-      margin: "0rem",
-      duration: 3,
-      stagger: 0.5,
-      ease: "expo.out",
-    });
-
     const cards = gsap.utils.toArray(CardRef.current.children);
     const contents = gsap.utils.toArray(ServiceContentRef.current.children);
 
@@ -485,17 +405,6 @@ export const Services = () => {
         {/* <BlobBackground /> */}
 
         <ServicesContainer>
-          <PageTitle ref={pageTitleRef}>
-            <span>S</span>
-            <span>e</span>
-            <span>r</span>
-            <span>v</span>
-            <span>i</span>
-            <span>c</span>
-            <span>e</span>
-            <span>s</span>
-          </PageTitle>
-
           <ServicesContent ref={ServiceContentRef}>
             {serviceContentData.map((content, index) => (
               <div
@@ -508,7 +417,13 @@ export const Services = () => {
                 }}
                 key={index}
               >
-                <ServiceButton>{content.button}</ServiceButton>
+                <ServiceButton
+                  className={`service-btn${
+                    index >= serviceContentData.length - 2 ? " last-two" : ""
+                  }`}
+                >
+                  {content.button}
+                </ServiceButton>
                 <ServiceMoto>{content.moto}</ServiceMoto>
               </div>
             ))}

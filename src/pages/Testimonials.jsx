@@ -30,16 +30,16 @@ const PageTitle = styled.h1`
   span {
     font-family: "Korto-bold", sans-serif;
     font-weight: 700;
-    font-size: 6.6rem;
+    font-size: 4.5rem;
     display: inline-block;
     transform-origin: center;
-    margin: 0 2rem;
+    margin: 0 1.5rem;
     transform: scale(2);
   }
 
   @media (max-width: 480px) {
     span {
-      font-size: 3.2rem;
+      font-size: 2.5rem;
       margin: 0 1rem;
       transform: scale(1.4);
     }
@@ -47,7 +47,7 @@ const PageTitle = styled.h1`
 
   @media (min-width: 481px) and (max-width: 768px) {
     span {
-      font-size: 4rem;
+      font-size: 3rem;
       margin: 0 1.2rem;
       transform: scale(1.6);
     }
@@ -527,17 +527,18 @@ export const Testimonials = () => {
       ref={sectionRef}
     >
       <PageTitle ref={pageTitleRef}>
-        <span>T</span>
-        <span>e</span>
-        <span>s</span>
-        <span>t</span>
-        <span>i</span>
-        <span>m</span>
-        <span>o</span>
-        <span>n</span>
-        <span>i</span>
+        <span>H</span>
         <span>a</span>
+        <span>p</span>
+        <span>p</span>
+        <span>y</span>
+        <span>&nbsp;</span>
+        <span>C</span>
         <span>l</span>
+        <span>i</span>
+        <span>e</span>
+        <span>n</span>
+        <span>t</span>
         <span>s</span>
       </PageTitle>
       <CardContainer ref={cardsContainerRef}>

@@ -6,7 +6,6 @@ import { Hero } from "./pages/Hero";
 import { Stats } from "./pages/Stats";
 import { Services } from "./pages/Services";
 import { Testimonials } from "./pages/Testimonials";
-import { Gallery } from "./pages/Gallery";
 import { Faqs } from "./pages/Faqs";
 import { Contact } from "./pages/Contact";
 import { Clients } from "./pages/Clients";
