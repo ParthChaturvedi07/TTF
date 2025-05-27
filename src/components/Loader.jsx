@@ -8,7 +8,7 @@ const LoaderContainer = styled.div`
   height: 100vh;
   width: 100%;
   padding: 3vh 10vh;
-  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -86,6 +86,19 @@ const ProgressBar = styled.div`
   }
 `;
 
+const WhiteRevealLayer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #fcb731;
+  z-index: 9998;
+  transform: translateX(100%);
+  pointer-events: none;
+  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.1);
+`;
+
 export const Loader = ({ onComplete }) => {
   const LoaderContainerRef = useRef(null);
   const loadingtextRef = useRef(null);
@@ -93,24 +106,22 @@ export const Loader = ({ onComplete }) => {
   const progressTextRef = useRef(null);
   const [percentage, setPercentage] = useState(100);
   const [isExiting, setIsExiting] = useState(false);
+  const [whiteLayerDone, setWhiteLayerDone] = useState(false);
+  const whiteLayerRef = useRef(null);
 
   useGSAP(() => {
     const headlines = loadingtextRef.current.querySelectorAll("h1");
     const progressBar = progressBarRef.current;
     const masterTl = gsap.timeline();
-
-    // Add a small delay before starting the animation
-    // masterTl.to({}, { duration: 0.5 });
+    const revealTl = gsap.timeline(); // <-- new timeline for white layer
 
     headlines.forEach((h1, i) => {
       const spans = h1.querySelectorAll("span");
       const cycleTl = gsap.timeline();
 
-      // Start with headline hidden
       gsap.set(h1, { opacity: 0, y: 100 });
       gsap.set(spans, { y: 50, opacity: 0 });
 
-      // Show headline container
       cycleTl.to(h1, {
         y: 0,
         opacity: 1,
@@ -118,7 +129,6 @@ export const Loader = ({ onComplete }) => {
         ease: "power2.out",
       });
 
-      // Animate spans in
       cycleTl.to(spans, {
         y: 0,
         opacity: 0.6,
@@ -127,10 +137,8 @@ export const Loader = ({ onComplete }) => {
         ease: "power3.out",
       });
 
-      // Hold
       cycleTl.to({}, { duration: 0.6 });
 
-      // Animate spans out
       cycleTl.to(spans, {
         y: -50,
         opacity: 0,
@@ -139,7 +147,6 @@ export const Loader = ({ onComplete }) => {
         ease: "power3.in",
       });
 
-      // Hide headline container
       cycleTl.to(h1, {
         y: -100,
         opacity: 0,
@@ -147,7 +154,6 @@ export const Loader = ({ onComplete }) => {
         ease: "power2.inOut",
       });
 
-      // Progress bar animation
       cycleTl.to(
         progressBar,
         {
@@ -169,22 +175,39 @@ export const Loader = ({ onComplete }) => {
 
     masterTl.call(() => {
       setIsExiting(true);
-      // Wait for exit animation to complete before calling onComplete
-      setTimeout(() => {
-        onComplete?.();
-      }, 1000); // Match the exit transition duration
+
+      // White layer wipe timeline
+      revealTl.fromTo(
+        whiteLayerRef.current,
+        { x: "100%" },
+        {
+          x: "0%",
+          duration: 1.2,
+          delay: 0.2,
+          ease: "power3.inOut",
+        }
+      );
+
+      revealTl.call(() => {
+        onComplete?.(); // Render main app
+      });
+
+      revealTl.to(whiteLayerRef.current, {
+        x: "-100%",
+        duration: 1,
+        delay: 0.1,
+        ease: "power3.inOut",
+        onComplete: () => {
+          setWhiteLayerDone(true); // remove it from DOM
+        },
+      });
     });
 
-    // const tl2 = gsap.timeline();
-
-    // tl2.to(LoaderContainerRef.current, {
-    //   x: -1700,
-    //   duration: 2,
-    //   delay: 7,
-    //   ease: "power2.out",
-    // });
-
-    return () => masterTl.kill();
+    return () => {
+      masterTl.kill(); // ✅ clear the loader animation
+      revealTl.kill(); // ✅ clear the white reveal animation
+      gsap.killTweensOf("*"); // Optional: kills all lingering tweens
+    };
   }, [onComplete]);
 
   return (
@@ -209,6 +232,7 @@ export const Loader = ({ onComplete }) => {
           <span>impossible to ignore</span>
         </h1>
       </LoadingText>
+      {!whiteLayerDone && <WhiteRevealLayer ref={whiteLayerRef} />}
     </LoaderContainer>
   );
 };

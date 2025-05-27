@@ -83,6 +83,10 @@ body::before {
   width: 100%;
   overflow-x: hidden;
 }
+/* 
+.white-reveal-layer {
+ 
+} */
 
 .blur-center {
   position: absolute;

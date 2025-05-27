@@ -27,7 +27,7 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-
+  
   .hero-video {
     position: absolute;
     top: 50%;
@@ -321,7 +321,9 @@ export const Hero = () => {
   }, []);
 
   useGSAP(() => {
-    const tl = gsap.timeline({ paused: true });
+    const tl = gsap.timeline({
+      delay: "0.35",
+    });
 
     let spliting = SplitText.create(".title", {
       type: "words",
@@ -347,6 +349,15 @@ export const Hero = () => {
       },
       "reveal"
     )
+      .from(
+        ".blur-center",
+        {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "reveal"
+      )
       .from(
         spliting.words,
         {
@@ -394,7 +405,7 @@ export const Hero = () => {
         "reveal"
       );
 
-    tl.play();
+    // tl.play();
 
     let mm = gsap.matchMedia();
 

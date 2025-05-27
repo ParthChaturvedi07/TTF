@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import GlobalStyles from "./styles/GlobalStyles";
 import { Navbar } from "./components/Navbar";
@@ -9,12 +9,13 @@ import { Testimonials } from "./pages/Testimonials";
 import { Gallery } from "./pages/Gallery";
 import { Faqs } from "./pages/Faqs";
 import { Contact } from "./pages/Contact";
-import { Clients } from "./pages/Clients"; 
-import gsap from "gsap";
+import { Clients } from "./pages/Clients";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Process } from "./pages/Process";
 import { Footer } from "./components/Footer";
 import { Loader } from "./components/Loader";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
