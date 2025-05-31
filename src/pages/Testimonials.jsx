@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 // import test1 from "../assets/images/testimonial1.png";
-import test1 from "../assets/videos/Cinematic Coffee B Roll - Sony A7S III + 16-35mm F4.mp4";
+import test1 from "../assets/videos/Video-163.mp4";
+import test2 from "../assets/videos/Video-532.mp4";
+import test3 from "../assets/videos/Video-246.mp4";
+import test4 from "../assets/videos/Video-268.mp4";
 import coinImage from "../assets/images/coin.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -289,6 +292,89 @@ const VisitSite = styled.a`
   }
 `;
 
+const ViewMore = styled.a`
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  width: 12rem;
+  height: auto;
+
+  .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #fcb731;
+    border-radius: 1.625rem;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+  }
+
+  .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+  }
+
+  .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: "Gilroy-medium", sans-serif;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &:hover .circle {
+    width: 100%;
+  }
+
+  &:hover .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+  }
+
+  &:hover .button-text {
+    color: #fff;
+  }
+`;
+
 const TestimonialCard = ({ video, name, title, quote }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -384,7 +470,7 @@ export const Testimonials = () => {
         },
       });
       tl2.to(cardsContainerRef.current, {
-        transform: "translate(-48%)",
+        transform: "translate(-33%)",
         ease: "linear",
       });
     });
@@ -402,7 +488,7 @@ export const Testimonials = () => {
         },
       });
       tl2.to(cardsContainerRef.current, {
-        transform: "translate(-65%)",
+        transform: "translate(-50%)",
         ease: "linear",
       });
     });
@@ -439,83 +525,32 @@ export const Testimonials = () => {
   const testimonials = [
     {
       video: test1, // Replace with actual video paths
-      name: "Sarthak Sahni",
-      title: "Founder, TTF",
+      name: "Piyush Agarwal",
+      title: "Founder, Indus Flavour",
       quote:
-        "We saw real results within weeks. TechTasteFoods didn't just suggest changes — they brought a clear strategy, and creative ideas.",
+        "TechTasteFoods didn't just suggest changes — they brought a clear strategy, and creative ideas.",
     },
     {
-      video: test1, // Replace with actual video paths
-      name: "Sarthak Sahni",
-      title: "Founder, TTF",
-      quote:
-        "We saw real results within weeks. TechTasteFoods didn't just suggest changes — they brought a clear strategy, and creative ideas.",
-    },
-    {
-      video: test1, // You'll need to import additional videos
-      name: "Sarah Johnson",
-      title: "Operations Head, EatFresh",
+      video: test2, // You'll need to import additional videos
+      name: "Krunal Parmar",
+      title: "Owner, Multi brand Cloud Kitchen",
       quote:
         "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
     },
     {
-      video: test1, // You'll need to import additional videos
-      name: "Sarah Johnson",
-      title: "Operations Head, EatFresh",
+      video: test3, // Replace with actual video paths
+      name: "Vidhu Saxena",
+      title: "Founder, Bakistry",
       quote:
-        "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
+        "With Tech Taste Foods, we didn't just get consultants—we got partners who transformed our brand with data-driven strategies and real results.",
     },
     {
-      video: test1, // You'll need to import additional videos
-      name: "Sarah Johnson",
-      title: "Operations Head, EatFresh",
+      video: test4, // You'll need to import additional videos
+      name: "Dharit Gadani",
+      title: "Founder, Vittle Box",
       quote:
-        "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
+        "The approach and strategies were top-notch—TTF helped us streamline operations, boost revenue, and build a brand we’re truly proud of.",
     },
-    {
-      video: test1, // You'll need to import additional videos
-      name: "Sarah Johnson",
-      title: "Operations Head, EatFresh",
-      quote:
-        "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
-    },
-    // },{
-    //   image: test1, // You'll need to import additional images
-    //   name: "Sarah Johnson",
-    //   title: "Operations Head, EatFresh",
-    //   quote:
-    //     "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
-    // },{
-    //   image: test1, // You'll need to import additional images
-    //   name: "Sarah Johnson",
-    //   title: "Operations Head, EatFresh",
-    //   quote:
-    //     "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
-    // },{
-    //   image: test1, // You'll need to import additional images
-    //   name: "Sarah Johnson",
-    //   title: "Operations Head, EatFresh",
-    //   quote:
-    //     "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
-    // },{
-    //   image: test1, // You'll need to import additional images
-    //   name: "Sarah Johnson",
-    //   title: "Operations Head, EatFresh",
-    //   quote:
-    //     "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
-    // },{
-    //   image: test1, // You'll need to import additional images
-    //   name: "Sarah Johnson",
-    //   title: "Operations Head, EatFresh",
-    //   quote:
-    //     "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
-    // },{
-    //   image: test1, // You'll need to import additional images
-    //   name: "Sarah Johnson",
-    //   title: "Operations Head, EatFresh",
-    //   quote:
-    //     "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
-    // },
   ];
 
   return (
@@ -545,6 +580,12 @@ export const Testimonials = () => {
         {testimonials.map((testimonial, index) => (
           <TestimonialCard key={index} {...testimonial} />
         ))}
+        <ViewMore href="https://www.instagram.com/techtastefoods/" className="learn-more">
+          <span className="circle" aria-hidden="true">
+            <span className="icon arrow"></span>
+          </span>
+          <span className="button-text">View More</span>
+        </ViewMore>
       </CardContainer>
     </TestimonialSection>
   );
