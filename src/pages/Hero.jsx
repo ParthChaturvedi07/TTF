@@ -12,6 +12,13 @@ import sampleImage from "../assets/images/sampleimage.avif";
 import sampleImage2 from "../assets/images/sampleimg2.png";
 import sampleImage3 from "../assets/images/sampleimage3.png";
 import sampleImage4 from "../assets/images/sampleimage4.png";
+import sampleImage5 from "../assets/images/gallery1.jpeg";
+import sampleImage6 from "../assets/images/gallery2.jpeg";
+import sampleImage7 from "../assets/images/gallery3.jpeg";
+import sampleImage8 from "../assets/images/gallery4.jpeg";
+import sampleImage9 from "../assets/images/gallery5.jpeg";
+import sampleImage10 from "../assets/images/gallery6.jpeg";
+import sampleImage11 from "../assets/images/gallery7.jpeg";
 // import sampleImage5 from "../assets/images/sampleimage5.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +34,7 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  
+
   .hero-video {
     position: absolute;
     top: 50%;
@@ -266,7 +273,19 @@ export const Hero = () => {
   const WhoCalloutRef = useRef(null);
 
   useGSAP(() => {
-    const images = [sampleImage, sampleImage2, sampleImage3, sampleImage4];
+    const images = [
+      sampleImage,
+      sampleImage2,
+      sampleImage3,
+      sampleImage4,
+      sampleImage5,
+      sampleImage6,
+      sampleImage7,
+      sampleImage8,
+      sampleImage9,
+      sampleImage10,
+      sampleImage11,
+    ];
 
     let currentImageIndex = 0;
     let lastX = 0;
@@ -298,7 +317,7 @@ export const Hero = () => {
         y: y,
         scale: 0,
         opacity: 0,
-        // rotation: gsap.utils.random(-20, -20),
+        // rotation: gsap.utils.random(-20, 20),
       });
 
       gsap.to(img, {
