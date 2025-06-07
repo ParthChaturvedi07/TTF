@@ -8,18 +8,18 @@ import styled from "styled-components";
 import hero_video from "../assets/videos/Cinematic Coffee B Roll - Sony A7S III + 16-35mm F4.mp4";
 import sparkle from "../assets/icons/sparkle.svg";
 import { WhoAreWe } from "./WhoAreWe";
-import sampleImage from "../assets/images/sampleimage.avif";
-import sampleImage2 from "../assets/images/sampleimg2.png";
-import sampleImage3 from "../assets/images/sampleimage3.png";
-import sampleImage4 from "../assets/images/sampleimage4.png";
-import sampleImage5 from "../assets/images/gallery1.jpeg";
-import sampleImage6 from "../assets/images/gallery2.jpeg";
-import sampleImage7 from "../assets/images/gallery3.jpeg";
-import sampleImage8 from "../assets/images/gallery4.jpeg";
-import sampleImage9 from "../assets/images/gallery5.jpeg";
-import sampleImage10 from "../assets/images/gallery6.jpeg";
-import sampleImage11 from "../assets/images/gallery7.jpeg";
-// import sampleImage5 from "../assets/images/sampleimage5.png";
+// import sampleImage from "../assets/images/sampleimage.avif";
+// import sampleImage2 from "../assets/images/sampleimg2.png";
+// import sampleImage3 from "../assets/images/sampleimage3.png";
+// import sampleImage4 from "../assets/images/sampleimage4.png";
+// import sampleImage5 from "../assets/images/gallery1.jpeg";
+// import sampleImage6 from "../assets/images/gallery2.jpeg";
+// import sampleImage7 from "../assets/images/gallery3.jpeg";
+// import sampleImage8 from "../assets/images/gallery4.jpeg";
+// import sampleImage9 from "../assets/images/gallery5.jpeg";
+// import sampleImage10 from "../assets/images/gallery6.jpeg";
+// import sampleImage11 from "../assets/images/gallery7.jpeg";
+// // import sampleImage5 from "../assets/images/sampleimage5.png";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -272,73 +272,73 @@ export const Hero = () => {
   const WhoParaRef = useRef(null);
   const WhoCalloutRef = useRef(null);
 
-  useGSAP(() => {
-    const images = [
-      sampleImage,
-      sampleImage2,
-      sampleImage3,
-      sampleImage4,
-      sampleImage5,
-      sampleImage6,
-      sampleImage7,
-      sampleImage8,
-      sampleImage9,
-      sampleImage10,
-      sampleImage11,
-    ];
+  // useGSAP(() => {
+  //   const images = [
+  //     sampleImage,
+  //     sampleImage2,
+  //     sampleImage3,
+  //     sampleImage4,
+  //     sampleImage5,
+  //     sampleImage6,
+  //     sampleImage7,
+  //     sampleImage8,
+  //     sampleImage9,
+  //     sampleImage10,
+  //     sampleImage11,
+  //   ];
 
-    let currentImageIndex = 0;
-    let lastX = 0;
-    let lastY = 0;
-    let distanceThreshold = 180;
+  //   let currentImageIndex = 0;
+  //   let lastX = 0;
+  //   let lastY = 0;
+  //   let distanceThreshold = 180;
 
-    window.addEventListener("mousemove", (e) => {
-      const dx = e.clientX - lastX;
-      const dy = e.clientY - lastY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
+  //   window.addEventListener("mousemove", (e) => {
+  //     const dx = e.clientX - lastX;
+  //     const dy = e.clientY - lastY;
+  //     const distance = Math.sqrt(dx * dx + dy * dy);
 
-      if (distance > distanceThreshold) {
-        createTrail(e.clientX, e.clientY);
-        lastX = e.clientX;
-        lastY = e.clientY;
-      }
-    });
+  //     if (distance > distanceThreshold) {
+  //       createTrail(e.clientX, e.clientY);
+  //       lastX = e.clientX;
+  //       lastY = e.clientY;
+  //     }
+  //   });
 
-    function createTrail(x, y) {
-      const img = document.createElement("img");
-      img.classList.add("image-trail");
-      img.src = images[currentImageIndex];
-      WrapperRef.current.appendChild(img);
+  //   function createTrail(x, y) {
+  //     const img = document.createElement("img");
+  //     img.classList.add("image-trail");
+  //     img.src = images[currentImageIndex];
+  //     WrapperRef.current.appendChild(img);
 
-      currentImageIndex = (currentImageIndex + 1) % images.length;
+  //     currentImageIndex = (currentImageIndex + 1) % images.length;
 
-      gsap.set(img, {
-        x: x,
-        y: y,
-        scale: 0,
-        opacity: 0,
-        // rotation: gsap.utils.random(-20, 20),
-      });
+  //     gsap.set(img, {
+  //       x: x,
+  //       y: y,
+  //       scale: 0,
+  //       opacity: 0,
+  //       // rotation: gsap.utils.random(-20, 20),
+  //     });
 
-      gsap.to(img, {
-        scale: 1,
-        opacity: 1,
-        duration: 0.4,
-        ease: "power2.out",
-      });
+  //     gsap.to(img, {
+  //       scale: 1,
+  //       opacity: 1,
+  //       duration: 0.4,
+  //       ease: "power2.out",
+  //     });
 
-      gsap.to(img, {
-        scale: 0.2,
-        opacity: 0,
-        duration: 1,
-        delay: 0.3,
-        ease: "power2.in",
-        onComplete: () => {
-          img.remove();
-        },
-      });
-    }
-  }, []);
+  //     gsap.to(img, {
+  //       scale: 0.2,
+  //       opacity: 0,
+  //       duration: 1,
+  //       delay: 0.3,
+  //       ease: "power2.in",
+  //       onComplete: () => {
+  //         img.remove();
+  //       },
+  //     });
+  //   }
+  // }, []);
 
   useGSAP(() => {
     const tl = gsap.timeline({
