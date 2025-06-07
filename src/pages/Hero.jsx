@@ -689,11 +689,12 @@ export const Hero = () => {
           className="hero-video"
           ref={HeroVideo}
           preload="metadata"
-          src={hero_video}
+          src="https://res.cloudinary.com/drtyehnro/video/upload/v1749303456/fw4yqr04ummt9h5rxgk4.mp4"
           autoPlay
           muted
           loop
-          poster={hero_video}
+          playsInline
+          // poster={hero_video}
         />
 
         <WhoAreWeContainer ref={WhoAreWeRef}>
