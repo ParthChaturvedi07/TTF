@@ -21,9 +21,9 @@ const cardsData = [
   {
     id: 1,
     sections: [
-      { title: "Revenue Strategies", image: svc1 },
-      { title: "Business Consulting", image: svc2 },
-      { title: "Cloud Kitchen Solutions", image: svc3 },
+      { title: "Revenue Strategies", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304779/svc1_nzucxj.png" },
+      { title: "Business Consulting", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304784/svc2_wzbkpa.png" },
+      { title: "Cloud Kitchen Solutions", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304729/chef-with-tablet_hptc52.jpg" },
     ],
     ctaText: "Still thinking of investing into that restaurant? WE CAN HELP!",
     ctaButton: "Book a FREE call with us!",
@@ -31,9 +31,9 @@ const cardsData = [
   {
     id: 2,
     sections: [
-      { title: "Logo Design", image: svc4 },
-      { title: "Packaging Designs", image: svc5 },
-      { title: "Photoshoots", image: svc6 },
+      { title: "Logo Design", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304739/logodsn_zthg74.avif" },
+      { title: "Packaging Designs", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304748/packagingdsn_lxuazo.jpg" },
+      { title: "Photoshoots", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304741/photoshoot_l9lrek.avif" },
     ],
     ctaText: "Make your brand look as good as your food tastes!",
     ctaButton: "Book a FREE call with us!",
@@ -41,9 +41,9 @@ const cardsData = [
   {
     id: 3,
     sections: [
-      { title: "Digital Marketing", image: svc7 },
-      { title: "Ad Campaigns", image: svc8 },
-      { title: "Swiggy and Zomato Setup", image: svc9 },
+      { title: "Digital Marketing", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304731/digitalmarketing_xhx7uo.avif" },
+      { title: "Ad Campaigns", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304686/advertisement_z4gxqs.avif" },
+      { title: "Swiggy and Zomato Setup", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304778/swiggyzomato_pvs000.png" },
     ],
     ctaText: "Still wondering if ads really work? Lets prove they do!",
     ctaButton: "Book a FREE call with us!",
@@ -51,9 +51,9 @@ const cardsData = [
   {
     id: 4,
     sections: [
-      { title: "Website Design", image: svc10 },
-      { title: "Website Development", image: svc11 },
-      { title: "App Design", image: svc12 },
+      { title: "Website Design", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304946/webdsn_t6eivk.avif" },
+      { title: "Website Development", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304791/webdev_d2mz7h.avif" },
+      { title: "App Design", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304685/appdsn_ojgozm.avif" },
     ],
     ctaText: "Your food is online, is your brand online too?",
     ctaButton: "Book a FREE call with us!",
@@ -61,9 +61,9 @@ const cardsData = [
   {
     id: 5,
     sections: [
-      { title: "FSSAI Licensing", image: svc13 },
-      { title: "POS Integration", image: svc14 },
-      { title: "Menu Engineering", image: svc15 },
+      { title: "FSSAI Licensing", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304731/fssai_itgn3v.jpg" },
+      { title: "POS Integration", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304741/pos_cxgh93.avif" },
+      { title: "Menu Engineering", image: "https://res.cloudinary.com/drtyehnro/image/upload/v1749304741/menu_uwybrs.avif" },
     ],
     ctaText: "Wanna fix that Backend chaos before it burns your profits?",
     ctaButton: "Book a FREE call with us!",
