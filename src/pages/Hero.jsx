@@ -688,10 +688,12 @@ export const Hero = () => {
         <video
           className="hero-video"
           ref={HeroVideo}
+          preload="metadata"
           src={hero_video}
           autoPlay
           muted
           loop
+          poster={hero_video}
         />
 
         <WhoAreWeContainer ref={WhoAreWeRef}>

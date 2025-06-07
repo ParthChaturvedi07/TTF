@@ -388,6 +388,7 @@ const ServiceCard = ({ cardData }) => {
             style={{
               transition: "all 0.5s ease",
             }}
+            loading="lazy"
           />
           <CallToAction>
             <CTAText>{cardData.ctaText}</CTAText>
