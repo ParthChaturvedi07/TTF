@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 // import test1 from "../assets/images/testimonial1.png";
-import test1 from "../assets/videos/Video-163.mp4";
-import test2 from "../assets/videos/Video-532.mp4";
-import test3 from "../assets/videos/Video-246.mp4";
-import test4 from "../assets/videos/Video-268.mp4";
+// import test1 from "../assets/videos/Video-163.mp4";
+// import test2 from "../assets/videos/Video-532.mp4";
+// import test3 from "../assets/videos/Video-246.mp4";
+// import test4 from "../assets/videos/Video-268.mp4";
 import coinImage from "../assets/images/coin.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -524,28 +524,28 @@ export const Testimonials = () => {
 
   const testimonials = [
     {
-      video: test1, // Replace with actual video paths
+      video: "https://res.cloudinary.com/drtyehnro/video/upload/v1749367707/b4aw3qjqzcugzky02zq8.mp4",
       name: "Piyush Agarwal",
       title: "Founder, Indus Flavour",
       quote:
         "TechTasteFoods didn't just suggest changes — they brought a clear strategy, and creative ideas.",
     },
     {
-      video: test2, // You'll need to import additional videos
+      video: "https://res.cloudinary.com/drtyehnro/video/upload/v1749368382/gug3eadzbiep07mxtj7j.mp4", // You'll need to import additional videos
       name: "Krunal Parmar",
       title: "Owner, Multi brand Cloud Kitchen",
       quote:
         "The implementation was smooth, and the results exceeded our expectations. Highly recommended!",
     },
     {
-      video: test3, // Replace with actual video paths
+      video: "https://res.cloudinary.com/drtyehnro/video/upload/v1749368550/lls4obeczg9w3fid9pso.mp4", // Replace with actual video paths
       name: "Vidhu Saxena",
       title: "Founder, Bakistry",
       quote:
         "With Tech Taste Foods, we didn't just get consultants—we got partners who transformed our brand with data-driven strategies and real results.",
     },
     {
-      video: test4, // You'll need to import additional videos
+      video: "https://res.cloudinary.com/drtyehnro/video/upload/v1749368442/c2yhntka0j0g74tywgp4.mp4", // You'll need to import additional videos
       name: "Dharit Gadani",
       title: "Founder, Vittle Box",
       quote:

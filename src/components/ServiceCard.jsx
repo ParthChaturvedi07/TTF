@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import svc1 from "../assets/images/svc1.png";
-import svc2 from "../assets/images/svc2.png";
-import svc3 from "../assets/images/chef-with-tablet.png";
-import svc4 from "../assets/images/logodsn.avif";
-import svc5 from "../assets/images/packagingdsn.jpg";
-import svc6 from "../assets/images/photoshoot.avif";
-import svc7 from "../assets/images/digitalmarketing.avif";
-import svc8 from "../assets/images/advertisement.avif";
-import svc9 from "../assets/images/swiggyzomato.png";
-import svc10 from "../assets/images/webdsn.avif";
-import svc11 from "../assets/images/webdev.avif";
-import svc12 from "../assets/images/appdsn.avif";
-import svc13 from "../assets/images/fssai.jpg";
-import svc14 from "../assets/images/pos.avif";
-import svc15 from "../assets/images/menu.avif";
+// import svc1 from "../assets/images/svc1.png";
+// import svc2 from "../assets/images/svc2.png";
+// import svc3 from "../assets/images/chef-with-tablet.png";
+// import svc4 from "../assets/images/logodsn.avif";
+// import svc5 from "../assets/images/packagingdsn.jpg";
+// import svc6 from "../assets/images/photoshoot.avif";
+// import svc7 from "../assets/images/digitalmarketing.avif";
+// import svc8 from "../assets/images/advertisement.avif";
+// import svc9 from "../assets/images/swiggyzomato.png";
+// import svc10 from "../assets/images/webdsn.avif";
+// import svc11 from "../assets/images/webdev.avif";
+// import svc12 from "../assets/images/appdsn.avif";
+// import svc13 from "../assets/images/fssai.jpg";
+// import svc14 from "../assets/images/pos.avif";
+// import svc15 from "../assets/images/menu.avif";
 
-// Sample data array
+// data array
 const cardsData = [
   {
     id: 1,
