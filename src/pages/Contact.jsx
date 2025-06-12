@@ -423,7 +423,7 @@ export const Contact = () => {
                 </Icon>
                 <InfoContent>
                   <InfoTitle>Email Us</InfoTitle>
-                  <InfoText>techtastefoods@gmail.com</InfoText>
+                  <InfoText>admin@techtastefoods.com</InfoText>
                 </InfoContent>
               </InfoCard>
 

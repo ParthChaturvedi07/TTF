@@ -301,7 +301,7 @@ export const Footer = () => {
             STATE BANK COLONY, Gate Number 1, Block A, Gujranwala Town, Delhi,
             110009
           </p>
-          <p>techtastefoods@gmail.com</p>
+          <p>admin@techtastefoods.com</p>
           <p>+91-9643422824</p>
         </ContactInfo>
       </Column>
