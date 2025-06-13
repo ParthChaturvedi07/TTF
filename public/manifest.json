@@ -1,0 +1,16 @@
+{
+  "name": "Tech Taste Foods",
+  "short_name": "TTF",
+  "description": "Helping restaurants grow since 2014. We provide food business consulting, marketing, and operations solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fcb731",
+  "icons": [
+    {
+      "src": "./src/assets/icons/ttf_logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+} 

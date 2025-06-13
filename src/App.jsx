@@ -15,6 +15,7 @@ import { Footer } from "./components/Footer";
 import { Loader } from "./components/Loader";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { StructuredData } from "./components/StructuredData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,25 +73,25 @@ export const App = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <StructuredData />
       <GlobalStyles />
-      <Loader onComplete={() => setIsLoading(false)} />
-      {!isLoading && (
+      {isLoading ? (
+        <Loader onComplete={() => setIsLoading(false)} />
+      ) : (
         <>
           <Navbar />
           <Hero />
           <Stats />
-          <div style={{ position: "relative", zIndex: 2 }}>
-            <Services />
-            <Process />
-            <Testimonials />
-            <Clients />
-            <Faqs />
-            <Contact />
-            <Footer />
-          </div>
+          <Services />
+          <Process />
+          <Testimonials />
+          <Clients />
+          <Faqs />
+          <Contact />
+          <Footer />
         </>
       )}
-    </div>
+    </>
   );
 };
