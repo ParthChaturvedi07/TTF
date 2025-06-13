@@ -286,10 +286,10 @@ export const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="#">Blogs</a>
+            <a href="https://www.instagram.com/techtastefoods/">Blogs</a>
           </li>
           <li>
-            <a href="#">Success Stories</a>
+            <a href="#testimonial" onClick={(e) => handleFooterLinkClick(e, "testimonials")}>Success Stories</a>
           </li>
         </ul>
       </Column>

@@ -524,7 +524,7 @@ export const Testimonials = () => {
 
   const testimonials = [
     {
-      video: "https://res.cloudinary.com/drtyehnro/video/upload/v1749367707/b4aw3qjqzcugzky02zq8.mp4",
+      video: "https://res.cloudinary.com/drtyehnro/video/upload/v1749807736/sffmyuyam3bfqdkxsnua.mp4",
       name: "Piyush Agarwal",
       title: "Founder, Indus Flavour",
       quote:

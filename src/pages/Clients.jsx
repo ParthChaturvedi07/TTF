@@ -18,6 +18,9 @@ import Client11 from "../assets/icons/client11.svg";
 import Client12 from "../assets/icons/client12.svg";
 import Client13 from "../assets/icons/client13.svg";
 import Client14 from "../assets/icons/client14.svg";
+import Client15 from "../assets/icons/client15.svg";
+import Client16 from "../assets/icons/Client16.svg";
+import Client17 from "../assets/icons/Client17.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,8 +130,10 @@ export const Clients = () => {
     { logo: Client2 },
     { logo: Client3 },
     { logo: Client4 },
+    { logo: Client16 },
     { logo: Client5 },
     { logo: Client6 },
+    { logo: Client15 },
     { logo: Client7 },
     { logo: Client8 },
     { logo: Client9 },
@@ -137,6 +142,7 @@ export const Clients = () => {
     { logo: Client12 },
     { logo: Client13 },
     { logo: Client14 },
+    { logo: Client17 },
   ];
 
   const containerRef = useRef(null);
