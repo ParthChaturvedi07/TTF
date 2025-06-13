@@ -258,8 +258,29 @@ export const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos]);
+
+    // Close menu if clicking anywhere outside the menu when open
+    const handleClickAnywhere = (e) => {
+      if (isMenuOpen) {
+        // If click is outside nav content and hamburger button, close menu
+        if (
+          contentRef.current &&
+          !contentRef.current.contains(e.target) &&
+          linksRef.current &&
+          !linksRef.current.contains(e.target)
+        ) {
+          setIsMenuOpen(false);
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickAnywhere);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousedown", handleClickAnywhere);
+    };
+  }, [prevScrollPos, isMenuOpen]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
