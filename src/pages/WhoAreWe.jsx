@@ -92,11 +92,14 @@ const Callout = styled.div`
     padding: 0.7rem;
   }
 
+  @media (max-width: 2560px) and (min-width: 1920px) {
+    margin-left: -14vw;
+  }
+
   @media (max-width: 1200px) and (min-width: 993px) {
     margin-left: -15.5vw;
   }
 
-  /* For screens between 992px and 900px */
   @media (max-width: 992px) and (min-width: 901px) {
     margin-left: -20.5vw;
   }
@@ -118,6 +121,10 @@ const CalloutText = styled.div`
 
   @media (max-width: 600px) {
     display: none;
+  }
+
+  @media (max-width: 2560px) and (min-width: 1920px) {
+    margin-left: 15.5vw;
   }
 
   @media (max-width: 1200px) and (min-width: 993px) {

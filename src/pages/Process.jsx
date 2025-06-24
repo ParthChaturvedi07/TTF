@@ -186,7 +186,14 @@ const ProcessFooter = styled.div`
 
   @media (max-width: 480px) {
     padding: 1vh 3vh;
+    width: 100%;
+    max-width: 910px;
     gap: 1rem;
+  }
+
+  @media (max-width: 2560px) and (min-width: 1920px) {
+    width: 45%;
+    max-width: 910px;
   }
 `;
 
@@ -204,7 +211,7 @@ const FooterText = styled.p`
 
 const BookButton = styled.button`
   background: #fcb731;
-  min-width: 25vw;
+  min-width: 15vw;
   border: none;
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.16);
   border-radius: 999px;
