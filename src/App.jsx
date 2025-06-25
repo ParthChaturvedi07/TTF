@@ -22,55 +22,55 @@ gsap.registerPlugin(ScrollTrigger);
 export const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const isTouchDevice =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) return;
+  // useEffect(() => {
+  //   const isTouchDevice =
+  //     "ontouchstart" in window || navigator.maxTouchPoints > 0;
+  //   if (isTouchDevice) return;
 
-    const lenis = new Lenis({
-      duration: 2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: "vertical",
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      smooth: true,
-      normalizeWheel: true,
-      smoothTouch: false,
-    });
+  //   const lenis = new Lenis({
+  //     duration: 2,
+  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  //     orientation: "vertical",
+  //     smoothWheel: true,
+  //     wheelMultiplier: 1,
+  //     touchMultiplier: 2,
+  //     smooth: true,
+  //     normalizeWheel: true,
+  //     smoothTouch: false,
+  //   });
 
-    lenis.on("scroll", ScrollTrigger.update);
+  //   lenis.on("scroll", ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
+  //   gsap.ticker.add((time) => {
+  //     lenis.raf(time * 1000);
+  //   });
 
-    gsap.ticker.lagSmoothing(0);
+  //   gsap.ticker.lagSmoothing(0);
 
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        lenis.stop();
-      } else {
-        lenis.start();
-      }
-    };
+  //   const handleVisibilityChange = () => {
+  //     if (document.hidden) {
+  //       lenis.stop();
+  //     } else {
+  //       lenis.start();
+  //     }
+  //   };
 
-    const handleResize = () => {
-      ScrollTrigger.refresh(); // <== this is important
-    };
+  //   const handleResize = () => {
+  //     ScrollTrigger.refresh(); // <== this is important
+  //   };
 
-    window.addEventListener("resize", handleResize);
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+  //   window.addEventListener("resize", handleResize);
+  //   document.addEventListener("visibilitychange", handleVisibilityChange);
 
-    window.lenis = lenis;
+  //   window.lenis = lenis;
 
-    return () => {
-      lenis.destroy();
-      gsap.ticker.remove(lenis.raf);
-      window.removeEventListener("resize", handleResize);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, []);
+  //   return () => {
+  //     lenis.destroy();
+  //     gsap.ticker.remove(lenis.raf);
+  //     window.removeEventListener("resize", handleResize);
+  //     document.removeEventListener("visibilitychange", handleVisibilityChange);
+  //   };
+  // }, []);
 
   return (
     <>
