@@ -147,6 +147,10 @@ const InfoText = styled.p`
   font-size: 0.9rem;
   margin: 0;
 
+  a {
+    color: #000;
+  }
+
   @media (min-width: 601px) and (max-width: 900px) {
     font-size: 0.87rem;
   }
