@@ -417,15 +417,20 @@ export const Contact = () => {
         <Connect>
           <ContactInfoContainer ref={contactInfoRef}>
             <ContactInfo>
-              <InfoCard>
-                <Icon>
-                  <img src={email} alt="" />
-                </Icon>
-                <InfoContent>
-                  <InfoTitle>Email Us</InfoTitle>
-                  <InfoText>admin@techtastefoods.com</InfoText>
-                </InfoContent>
-              </InfoCard>
+             <InfoCard>
+  <Icon>
+    <img src={email} alt="" />
+  </Icon>
+  <InfoContent>
+    <InfoTitle>Email Us</InfoTitle>
+    <InfoText>
+      <a href="mailto:admin@techtastefoods.com">
+        admin@techtastefoods.com
+      </a>
+    </InfoText>
+  </InfoContent>
+</InfoCard>
+
 
               <InfoCard>
                 <Icon>
